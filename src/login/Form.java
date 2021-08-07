@@ -3,7 +3,10 @@ package login;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.io.File;
 
 public class Form {
 
@@ -22,11 +25,15 @@ public class Form {
 
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource(url));
-			Stage registerStage = new Stage();
-			registerStage.setTitle("Healthy Life System");
-//			registerStage.initStyle(StageStyle.UNDECORATED);
-			registerStage.setScene(new Scene(root, sceneWidth, sceneLength));
-			registerStage.show();
+			Stage stage = new Stage();
+			stage.setTitle("Healthy Life System");
+			File iconFile = new File("images/hubCoral.png");
+			Image iconImage = new Image(iconFile.toURI().toString());
+			stage.getIcons().add(iconImage);
+			
+//			stage.initStyle(StageStyle.UNDECORATED);
+			stage.setScene(new Scene(root, sceneWidth, sceneLength));
+			stage.show();
 
 		} catch (Exception e) {
 			e.printStackTrace();
