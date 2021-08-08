@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="systemOperationPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.MainMenuNavigateController">
+<BorderPane fx:id="systemOperationPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.HouseChoresMainController">
    <left>
       <AnchorPane fx:id="slider" prefHeight="475.0" prefWidth="235.0" style="-fx-background-color: #0F1626;" BorderPane.alignment="CENTER">
          <children>
@@ -73,10 +72,7 @@
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane fx:id="mainOperationPane" prefHeight="635.0" prefWidth="1028.0" style="-fx-background-color: #f5f5f5;" BorderPane.alignment="CENTER">
-         <children>
-            <Circle fill="DODGERBLUE" layoutX="259.0" layoutY="274.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
-         </children></AnchorPane>
+      <AnchorPane fx:id="mainOperationPane" prefHeight="635.0" prefWidth="1028.0" style="-fx-background-color: #f5f5f5;" BorderPane.alignment="CENTER" />
    </right>
    <top>
       <AnchorPane prefHeight="65.0" prefWidth="1025.0" style="-fx-background-color: #AB987A;" BorderPane.alignment="CENTER">
@@ -161,7 +157,7 @@
             </Label>
             <Pane layoutY="-5.0" prefHeight="29.0" prefWidth="1010.0" style="-fx-background-color: #f5f5f5;">
                <children>
-                  <Label fx:id="systemSelectionMessageLabel" layoutX="4.0" layoutY="7.0" prefHeight="24.0" prefWidth="551.0" />
+                  <Label fx:id="systemSelectionMessageLabel" layoutX="4.0" layoutY="7.0" prefHeight="24.0" prefWidth="551.0" text="House chores workload" />
                </children>
             </Pane>
          </children>

@@ -24,10 +24,9 @@ public class ImageAdder {
 	}
 
 	public void addImage(){
-			System.out.println("add start");
+
 			File file = new File(pathName);
 			javafx.scene.image.Image image = new javafx.scene.image.Image(file.toURI().toString());
 			imageView.setImage(image);
-			System.out.println("add success");
 	}
 }

@@ -89,6 +89,8 @@ public class LoginController implements Initializable {
 			while(queryResult.next()){
 				if(queryResult.getInt(1) == 1){
 						userName = usernameTextField.getText();
+						Stage stage = (Stage) cancelButton.getScene().getWindow();
+						stage.close();
 						createMainMenuForm();
 						loginMessageLabel.setText("");
 				}else{

@@ -4,25 +4,20 @@ import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-//TODO after summer term: trashFood, entertaining, health controller create, and connect to corresponding fxml file, right now they are all connected to housechorse one.
-public class MainMenuNavigateController implements Initializable {
+
+public class HouseChoresMainController implements Initializable {
 
 	private int SLIDER_WIDTH = 236;
 	@FXML
@@ -177,6 +172,7 @@ public class MainMenuNavigateController implements Initializable {
 		Screen screen = new Screen(url,systemOperationPane);
 		screen.switchPane();
 	}
+
 
 
 
