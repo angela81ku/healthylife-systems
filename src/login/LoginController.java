@@ -112,9 +112,9 @@ public class LoginController implements Initializable {
 	}
 
 	public void createMainMenuForm(){
-		String url = "../FXML/MainMenu.fxml";
-		int sceneWidth = 520;
-		int sceneLength = 400;
+		String url = "../FXML/mainMenuNavigate.fxml";
+		int sceneWidth = 1010;
+		int sceneLength = 700;
 		Form accountForm = new Form(url ,sceneWidth, sceneLength);
 		accountForm.creatForm();
 	}

@@ -28,12 +28,12 @@
                   <Image url="@../../images/padlock2.png" />
                </image>
             </ImageView>
-            <Button fx:id="houseChoresButton" layoutX="26.0" layoutY="145.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="246.0" stylesheets="@../CSS/NavyBlue.css" text="House chores workload system" textFill="WHITESMOKE">
+            <Button fx:id="houseChoresButton" layoutX="26.0" layoutY="145.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="246.0" stylesheets="@../CSS/NavyBlueHover.css" text="House chores workload system" textFill="WHITESMOKE">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="cancelButton" layoutX="26.0" layoutY="338.0" mnemonicParsing="false" onAction="#CancelButtonAction" prefHeight="25.0" prefWidth="246.0" stylesheets="@../CSS/NavyBlue.css" text="Exit" textFill="WHITESMOKE">
+            <Button fx:id="cancelButton" layoutX="26.0" layoutY="338.0" mnemonicParsing="false" onAction="#CancelButtonAction" prefHeight="25.0" prefWidth="246.0" stylesheets="@../CSS/NavyBlueHover.css" text="Exit" textFill="WHITESMOKE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -43,7 +43,7 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Button fx:id="healthTrackButton" layoutX="26.0" layoutY="185.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="246.0" stylesheets="@../CSS/NavyBlue.css" text="Health tracking system" textFill="WHITESMOKE">
+            <Button fx:id="healthTrackButton" layoutX="26.0" layoutY="185.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="246.0" stylesheets="@../CSS/NavyBlueHover.css" text="Health tracking system" textFill="WHITESMOKE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -53,12 +53,12 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Button fx:id="trashFoodTrackButton" layoutX="26.0" layoutY="225.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="246.0" stylesheets="@../CSS/NavyBlue.css" text="Trash food tracking system" textFill="WHITESMOKE">
+            <Button fx:id="trashFoodTrackButton" layoutX="26.0" layoutY="225.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="246.0" stylesheets="@../CSS/NavyBlueHover.css" text="Trash food tracking system" textFill="WHITESMOKE">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="entertainingBudgetButton" layoutX="26.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="246.0" stylesheets="@../CSS/NavyBlue.css" text="Entertaining budget tracking system" textFill="WHITESMOKE">
+            <Button fx:id="entertainingBudgetButton" layoutX="26.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="246.0" stylesheets="@../CSS/NavyBlueHover.css" text="Entertaining budget tracking system" textFill="WHITESMOKE">
                <font>
                   <Font size="13.0" />
                </font>

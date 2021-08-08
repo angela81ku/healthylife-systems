@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.MainMenuNavigateController">
+   <left>
+      <AnchorPane fx:id="slider" prefHeight="475.0" prefWidth="235.0" style="-fx-background-color: #0F1626;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="houseChoresButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="162.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" stylesheets="@../CSS/NavyBlueClick.css" text="House chores workload" textFill="WHITESMOKE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelButton" alignment="BASELINE_LEFT" layoutX="44.0" layoutY="519.0" mnemonicParsing="false" onAction="#CancelButtonAction" prefHeight="32.0" prefWidth="200.0" stylesheets="@../CSS/NavyBlueClick.css" text="Exit" textFill="WHITESMOKE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="healthTrackButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="257.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" stylesheets="@../CSS/NavyBlueClick.css" text="Health tracking " textFill="WHITESMOKE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="trashFoodTrackButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="306.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" stylesheets="@../CSS/NavyBlueClick.css" text="Trash food tracking " textFill="WHITESMOKE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="entertainingBudgetButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="210.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" stylesheets="@../CSS/NavyBlueClick.css" text="Entertaining budget track" textFill="WHITESMOKE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="houseImage" fitHeight="26.0" fitWidth="32.0" layoutX="10.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/house-2-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="entertainImage" fitHeight="26.0" fitWidth="32.0" layoutX="9.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/emoticon-48-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="sportImage" fitHeight="26.0" fitWidth="32.0" layoutX="9.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/soccer-4-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="friesImage" fitHeight="26.0" fitWidth="32.0" layoutX="8.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/french-fries-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="exitImage" fitHeight="26.0" fitWidth="32.0" layoutX="11.0" layoutY="520.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/exit-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="hubImage" fitHeight="77.0" fitWidth="99.0" layoutX="80.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/hubCoral.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane fx:id="greetingLabel" prefHeight="677.0" prefWidth="765.0" style="-fx-background-color: #f5f5f5;" BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <AnchorPane prefHeight="65.0" prefWidth="1025.0" style="-fx-background-color: #AB987A;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="menuButton" layoutX="18.0" layoutY="33.0" prefHeight="27.0" prefWidth="139.0" text="Menu" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="854.0" AnchorPane.topAnchor="33.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/activity-feed-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Pane layoutX="244.0" layoutY="24.0" prefHeight="41.0" prefWidth="755.0" style="-fx-background-color: #AB987A;">
+               <children>
+                  <Button layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css" text="Point list">
+                     <graphic>
+                        <ImageView fx:id="pointListImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/add-list-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="130.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css" text="Record">
+                     <graphic>
+                        <ImageView fx:id="recordImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/record.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="260.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css" text="Leader">
+                     <graphic>
+                        <ImageView fx:id="leaderImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/win-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="390.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css" text="Calendar">
+                     <graphic>
+                        <ImageView fx:id="calendarImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" y="5.0">
+                           <image>
+                              <Image url="@../../images/calendar-2-128.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="650.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button layoutX="520.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css" text="Allocation">
+                     <graphic>
+                        <ImageView fx:id="allocationImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/user-5-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Label fx:id="menuCloseButton" alignment="BOTTOM_LEFT" layoutX="18.0" layoutY="33.0" prefHeight="27.0" prefWidth="200.0" text="Menu" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="798.0" AnchorPane.topAnchor="33.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="menuImage" fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/activity-feed-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Pane layoutY="-5.0" prefHeight="29.0" prefWidth="1010.0" style="-fx-background-color: #f5f5f5;">
+               <children>
+                  <Label fx:id="systemSelectionMessageLabel" layoutX="4.0" layoutY="7.0" prefHeight="24.0" prefWidth="551.0" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
