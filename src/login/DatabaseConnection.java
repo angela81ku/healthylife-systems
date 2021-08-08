@@ -7,7 +7,6 @@ public class DatabaseConnection {
 
 	public Connection getConnection(){
 		String databaseName = "demo_db";
-		//TODO Don't know what the database user yet...
 		String databaseUser = "root";
 		String databasePassWord = "8MySQL@!7";
 		String url = "jdbc:mysql://localhost/" + databaseName;

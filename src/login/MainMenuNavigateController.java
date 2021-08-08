@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
 //TODO after summer term: trashFood, entertaining, health controller create, and connect to corresponding fxml file, right now they are all connected to housechorse one.
 public class MainMenuNavigateController implements Initializable {
 
-	private int SLIDER_WIDTH = 236;
+	private int SLIDER_WIDTH = 235;
 	@FXML
 	private BorderPane systemOperationPane;
 
@@ -132,7 +132,7 @@ public class MainMenuNavigateController implements Initializable {
 					menuCloseButton.setVisible(false);
 				});
 		});
-		systemSelectionMessageLabel.setText("House chores workload");
+		systemSelectionMessageLabel.setText("Main Menu");
 
 		}
 
@@ -150,6 +150,7 @@ public class MainMenuNavigateController implements Initializable {
 			ImageAdder image10 = new ImageAdder("images/hubCoral.png",hubImage);
 			ImageAdder image11 = new ImageAdder("images/activity-feed-64.png",menuImage);
 			ImageAdder image12 = new ImageAdder("images/activity-feed-64.png",menuCloseImage);
+
 		}
 
 

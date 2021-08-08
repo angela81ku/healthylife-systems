@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="635.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.HouseChoresSubPointListScreen">
+   <children>
+      <TableView layoutX="358.0" layoutY="1.0" prefHeight="635.0" prefWidth="418.0" style="-fx-background-color: #f5f5f5;">
+        <columns>
+          <TableColumn fx:id="houseCHoresIDColumn" prefWidth="131.33331298828125" text="HouseChores ID" />
+          <TableColumn fx:id="houseChoresNameColumn" prefWidth="144.0" text="House Chores Name" />
+            <TableColumn fx:id="pointColumn" prefWidth="117.33331298828125" text="Point" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="-3.0" prefHeight="636.0" prefWidth="362.0" style="-fx-background-color: #1974D2;">
+         <children>
+            <Button fx:id="addButton" layoutX="25.0" layoutY="430.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="320.0" stylesheets="@../CSS/NavyBlueHover.css" text="Add" />
+            <Button fx:id="updateButton" layoutX="25.0" layoutY="500.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="320.0" stylesheets="@../CSS/NavyBlueHover.css" text="Update" />
+            <Button fx:id="deleteButton" layoutX="25.0" layoutY="570.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="320.0" stylesheets="@../CSS/NavyBlueHover.css" text="Delete" />
+            <TextField fx:id="houseChoresIDTextField" layoutX="160.0" layoutY="124.0" prefHeight="25.0" prefWidth="190.0" />
+            <Label layoutX="25.0" layoutY="125.0" prefHeight="20.0" prefWidth="127.0" text="House Chores ID" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="170.0" prefHeight="20.0" prefWidth="127.0" text="House Chores Name" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="choresNameTextField" layoutX="160.0" layoutY="170.0" prefHeight="25.0" prefWidth="190.0" />
+            <Label layoutX="25.0" layoutY="215.0" prefHeight="20.0" prefWidth="127.0" text="Point" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pointTextField" layoutX="160.0" layoutY="215.0" prefHeight="25.0" prefWidth="190.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

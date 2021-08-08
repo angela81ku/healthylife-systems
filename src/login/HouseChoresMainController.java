@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -19,7 +20,7 @@ import java.util.ResourceBundle;
 
 public class HouseChoresMainController implements Initializable {
 
-	private int SLIDER_WIDTH = 236;
+	private int SLIDER_WIDTH = 235;
 	@FXML
 	private BorderPane systemOperationPane;
 
@@ -60,7 +61,7 @@ public class HouseChoresMainController implements Initializable {
 	private ImageView hubImage;
 
 	@FXML
-	private AnchorPane mainOperationPane;
+	private Pane mainOperationPane;
 
 	@FXML
 	private Label menuButton;
@@ -79,6 +80,8 @@ public class HouseChoresMainController implements Initializable {
 
 	@FXML
 	private ImageView allocationImage;
+
+
 
 	@FXML
 	private Label menuCloseButton;
@@ -128,7 +131,6 @@ public class HouseChoresMainController implements Initializable {
 				});
 		});
 		systemSelectionMessageLabel.setText("House chores workload");
-
 		}
 
 		public void displayImage(){
@@ -145,6 +147,7 @@ public class HouseChoresMainController implements Initializable {
 			ImageAdder image10 = new ImageAdder("images/hubCoral.png",hubImage);
 			ImageAdder image11 = new ImageAdder("images/activity-feed-64.png",menuImage);
 			ImageAdder image12 = new ImageAdder("images/activity-feed-64.png",menuCloseImage);
+
 		}
 
 
@@ -173,7 +176,11 @@ public class HouseChoresMainController implements Initializable {
 		screen.switchPane();
 	}
 
-
+	public void loadPointListScreen(ActionEvent event) throws IOException {
+		String url = "../FXML/houseChoresSubPointListScreen.fxml";
+		Screen screen = new Screen(url,mainOperationPane);
+		screen.switchPane();
+	}
 
 
 	public void cancelButtonAction(ActionEvent event){

@@ -73,10 +73,12 @@
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane fx:id="mainOperationPane" prefHeight="635.0" prefWidth="1028.0" style="-fx-background-color: #f5f5f5;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="mainOperationPane" prefHeight="635.0" prefWidth="1028.0" style="-fx-background-color: #000080;" BorderPane.alignment="CENTER">
          <children>
             <Circle fill="DODGERBLUE" layoutX="259.0" layoutY="274.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
-         </children></AnchorPane>
+            <Label layoutX="207.0" layoutY="264.0" text="This is main menu!!!" />
+         </children>
+      </AnchorPane>
    </right>
    <top>
       <AnchorPane prefHeight="65.0" prefWidth="1025.0" style="-fx-background-color: #AB987A;" BorderPane.alignment="CENTER">
@@ -95,36 +97,36 @@
             </Label>
             <Pane layoutX="244.0" layoutY="24.0" prefHeight="41.0" prefWidth="755.0" style="-fx-background-color: #AB987A;">
                <children>
-                  <Button layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css" text="Point list">
+                  <Button layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css">
                      <graphic>
-                        <ImageView fx:id="pointListImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="pointListImage" fitHeight="24.0" fitWidth="25.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/add-list-64.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="130.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css" text="Record">
+                  <Button layoutX="130.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css">
                      <graphic>
-                        <ImageView fx:id="recordImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="recordImage" fitHeight="24.0" fitWidth="25.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/record.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="260.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css" text="Leader">
+                  <Button layoutX="260.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css">
                      <graphic>
-                        <ImageView fx:id="leaderImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="leaderImage" fitHeight="24.0" fitWidth="25.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/win-64.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="390.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css" text="Calendar">
+                  <Button layoutX="390.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css">
                      <graphic>
-                        <ImageView fx:id="calendarImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" y="5.0">
+                        <ImageView fx:id="calendarImage" fitHeight="24.0" fitWidth="25.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" y="5.0">
                            <image>
                               <Image url="@../../images/calendar-2-128.png" />
                            </image>
@@ -136,9 +138,9 @@
                         <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
                   </Button>
-                  <Button layoutX="520.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css" text="Allocation">
+                  <Button layoutX="520.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css">
                      <graphic>
-                        <ImageView fx:id="allocationImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="allocationImage" fitHeight="24.0" fitWidth="25.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/user-5-64.png" />
                            </image>
