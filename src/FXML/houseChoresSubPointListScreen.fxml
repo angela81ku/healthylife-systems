@@ -8,19 +8,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="635.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.HouseChoresSubPointListScreen">
+<AnchorPane prefHeight="635.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.HouseChoresSubPointListController">
    <children>
-      <TableView layoutX="358.0" layoutY="1.0" prefHeight="635.0" prefWidth="418.0" style="-fx-background-color: #f5f5f5;">
+      <TableView fx:id="pointTable" layoutX="358.0" layoutY="1.0" prefHeight="635.0" prefWidth="418.0" style="-fx-background-color: #f5f5f5;">
         <columns>
-          <TableColumn fx:id="houseCHoresIDColumn" prefWidth="131.33331298828125" text="HouseChores ID" />
-          <TableColumn fx:id="houseChoresNameColumn" prefWidth="144.0" text="House Chores Name" />
-            <TableColumn fx:id="pointColumn" prefWidth="117.33331298828125" text="Point" />
+          <TableColumn fx:id="colID" prefWidth="131.33331298828125" text="HouseChores ID" />
+          <TableColumn fx:id="colChoreName" prefWidth="144.0" text="House Chores Name" />
+            <TableColumn fx:id="colPoint" prefWidth="117.33331298828125" text="Point" />
         </columns>
       </TableView>
       <AnchorPane layoutX="-3.0" prefHeight="636.0" prefWidth="362.0" style="-fx-background-color: #1974D2;">
          <children>
-            <Button fx:id="addButton" layoutX="25.0" layoutY="430.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="320.0" stylesheets="@../CSS/NavyBlueHover.css" text="Add" />
+            <Button fx:id="addButton" layoutX="25.0" layoutY="430.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="43.0" prefWidth="320.0" stylesheets="@../CSS/NavyBlueHover.css" text="Add" />
             <Button fx:id="updateButton" layoutX="25.0" layoutY="500.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="320.0" stylesheets="@../CSS/NavyBlueHover.css" text="Update" />
             <Button fx:id="deleteButton" layoutX="25.0" layoutY="570.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="320.0" stylesheets="@../CSS/NavyBlueHover.css" text="Delete" />
             <TextField fx:id="houseChoresIDTextField" layoutX="160.0" layoutY="124.0" prefHeight="25.0" prefWidth="190.0" />
@@ -41,6 +40,11 @@
                </font>
             </Label>
             <TextField fx:id="pointTextField" layoutX="160.0" layoutY="215.0" prefHeight="25.0" prefWidth="190.0" />
+            <Label fx:id="houseChoresRegistryMessageLabel" layoutX="29.0" layoutY="264.0" prefHeight="143.0" prefWidth="314.0" textFill="#ff533d">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
