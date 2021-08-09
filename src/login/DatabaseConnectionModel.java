@@ -1,14 +1,14 @@
 package login;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class DatabaseConnection {
+public class DatabaseConnectionModel {
 	public Connection databaseLink;
 
 
@@ -21,6 +21,7 @@ public class DatabaseConnection {
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			databaseLink = DriverManager.getConnection(url,databaseUser,databasePassWord);
+
 		}catch(Exception e){
 			e.printStackTrace();
 			e.getCause();
@@ -28,19 +29,19 @@ public class DatabaseConnection {
 		return databaseLink;
 	}
 
-	public static ObservableList<HouseChoresPoint> getPointTable(){
-		DatabaseConnection connectNow = new DatabaseConnection();
+	public static ObservableList<HouseChoresPoint> getHouseChoresPointTable(){
+		DatabaseConnectionModel connectNow = new DatabaseConnectionModel();
 		Connection connectDB = connectNow.getConnection();
 		ObservableList<HouseChoresPoint> list = FXCollections.observableArrayList();
 		try {
-			PreparedStatement preparedStatement = connectDB.prepareStatement("select * from point_list");
+			PreparedStatement preparedStatement = connectDB.prepareStatement("select * from housechores_table");
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next()){
 				list.add(new HouseChoresPoint(
-						resultSet.getInt("houseChoresIDColumn"),
-						resultSet.getString("houseChoresNameColumn"),
-						resultSet.getInt("pointColumn")
+						resultSet.getInt("houseChoresID"),
+						resultSet.getString("houseChoresName"),
+						resultSet.getInt("point")
 						));
 			}
 		}catch(Exception e){

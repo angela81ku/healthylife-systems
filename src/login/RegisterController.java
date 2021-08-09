@@ -1,10 +1,7 @@
 package login;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -13,11 +10,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
-import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -73,7 +68,7 @@ public class RegisterController implements Initializable{
 
 	}
   public void registerUser() {
-		DatabaseConnection connectNow = new DatabaseConnection();
+		DatabaseConnectionModel connectNow = new DatabaseConnectionModel();
 		Connection connectDB = connectNow.getConnection();
 
 		String firstname = firstnameTextField.getText();

@@ -1,10 +1,7 @@
 package login;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -13,7 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
-import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.sql.Connection;
@@ -78,7 +74,7 @@ public class LoginController implements Initializable {
 	}
 
 	public void validateLogin(){
-		DatabaseConnection connection = new DatabaseConnection();
+		DatabaseConnectionModel connection = new DatabaseConnectionModel();
 		Connection connectDB = connection.getConnection();
 
 		String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" +
