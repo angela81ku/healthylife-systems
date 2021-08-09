@@ -8,12 +8,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="635.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.HouseChoresSubPointListController">
+<AnchorPane prefHeight="635.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.HouseChoresSubRecordController">
    <children>
       <TableView fx:id="pointTable" layoutX="358.0" layoutY="1.0" onMouseClicked="#getSelected" prefHeight="635.0" prefWidth="418.0" style="-fx-background-color: #f5f5f5;">
         <columns>
-          <TableColumn fx:id="colID" prefWidth="113.99993896484375" text="HouseChores ID" />
-          <TableColumn fx:id="colChoreName" prefWidth="209.33334350585938" text="House Chores Name" />
+          <TableColumn fx:id="colID" prefWidth="99.33331298828125" text="HouseChores ID" />
+          <TableColumn fx:id="colChoreName" prefWidth="222.88894653320312" text="House Chores Name" />
             <TableColumn fx:id="colPoint" prefWidth="94.0" text="Point" />
         </columns>
       </TableView>
@@ -33,7 +33,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="choresNameTextField" layoutX="160.0" layoutY="170.0" prefHeight="25.0" prefWidth="190.0" promptText="45 char limited" />
+            <TextField fx:id="choresNameTextField" layoutX="160.0" layoutY="170.0" prefHeight="25.0" prefWidth="190.0" promptText="house chores name" />
             <Label layoutX="25.0" layoutY="215.0" prefHeight="20.0" prefWidth="127.0" text="Point" textFill="WHITE">
                <font>
                   <Font size="14.0" />
@@ -43,11 +43,6 @@
             <Label fx:id="houseChoresRegistryMessageLabel" layoutX="29.0" layoutY="264.0" prefHeight="143.0" prefWidth="314.0" textFill="#ff533d">
                <font>
                   <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="122.0" layoutY="67.0" prefHeight="20.0" prefWidth="127.0" text="1 point ≈ 5 minute" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
                </font>
             </Label>
          </children>

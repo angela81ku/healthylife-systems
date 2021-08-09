@@ -1,20 +1,19 @@
 package login;
 
-import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.fxml.FXML;
 
 import javax.swing.*;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class HouseChoresSubPointListController implements Initializable {
+public class HouseChoresSubRecordController implements Initializable {
 
 	private DatabaseConnectionModel connectNow = new DatabaseConnectionModel();
 
@@ -76,12 +75,13 @@ public class HouseChoresSubPointListController implements Initializable {
 		pointTable.setItems(listM);
 	}
 
-	public void addButtonOnAction() {
+	public void addButtonOnAction(ActionEvent event) {
 		addHouseChores();
 
 	}
 
 	public void updateButtonOnAction(ActionEvent event) {
+
 
 	}
 
@@ -90,9 +90,7 @@ public class HouseChoresSubPointListController implements Initializable {
 
 	}
 
-	/**
-	 * add a new house chore, with unique and integer ID ,integer point and 45 max char house chore name.
-	 */
+
 	private void addHouseChores() {
 		DatabaseConnectionModel connectNow = new DatabaseConnectionModel();
 		Connection connectDB = connectNow.getConnection();
@@ -101,7 +99,7 @@ public class HouseChoresSubPointListController implements Initializable {
 			String choresNameText = choresNameTextField.getText();
 			int pointColumnText = Integer.parseInt(pointTextField.getText());
 
-			String sql = "INSERT INTO housechores_table(houseChoresID, houseChoresName, point) VALUES(?,?,?) ";
+			String sql = "INSERT INTO housechores_table(houseChoresID, houseChoresName, point) VALUES(?,?,?)";
 			PreparedStatement statement = connectDB.prepareStatement(sql);
 			statement.setInt(1, houseChoresIDColumnText);
 			statement.setString(2, choresNameText);
@@ -114,11 +112,7 @@ public class HouseChoresSubPointListController implements Initializable {
 		} catch (NumberFormatException numberFormatException) {
 			houseChoresRegistryMessageLabel.setText("House Chores ID should be integer\n" +
 					"House Point should be integer\n");
-		} catch (MysqlDataTruncation e) {
-			houseChoresRegistryMessageLabel.setText("House chores name have 45 limited char");
-			e.printStackTrace();
-			e.getCause();
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			houseChoresRegistryMessageLabel.setText("House Chores ID should be unique");
 			e.printStackTrace();
 			e.getCause();
@@ -154,7 +148,8 @@ public class HouseChoresSubPointListController implements Initializable {
 			updateHouseChoresTable();
 			houseChoresRegistryMessageLabel.setText("Update successfully");
 		}catch(DataTruncation dataTruncation){
-			houseChoresRegistryMessageLabel.setText("House chores name have 45 limited char");
+			houseChoresRegistryMessageLabel.setText("House Chores ID should be integer\n"+
+					"House Point should be integer");
 		}catch (NumberFormatException numberFormatException) {
 			houseChoresRegistryMessageLabel.setText("House Chores ID should be integer\n" +
 					"House Point should be integer\n");

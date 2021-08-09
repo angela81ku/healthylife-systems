@@ -83,18 +83,6 @@
    <top>
       <AnchorPane prefHeight="65.0" prefWidth="1025.0" style="-fx-background-color: #AB987A;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="menuButton" layoutX="18.0" layoutY="33.0" prefHeight="27.0" prefWidth="139.0" text="Menu" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="854.0" AnchorPane.topAnchor="33.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <graphic>
-                  <ImageView fx:id="menuImage" fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/activity-feed-64.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Label>
             <Pane layoutX="244.0" layoutY="24.0" prefHeight="41.0" prefWidth="755.0" style="-fx-background-color: #AB987A;">
                <children>
                   <Button layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../CSS/LeatherHover.css">
@@ -155,6 +143,18 @@
                </font>
                <graphic>
                   <ImageView fx:id="menuCloseImage" fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/activity-feed-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="menuButton" layoutX="18.0" layoutY="33.0" prefHeight="27.0" prefWidth="200.0" text="Menu" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="854.0" AnchorPane.topAnchor="33.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="menuImage" fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/activity-feed-64.png" />
                      </image>

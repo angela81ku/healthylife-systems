@@ -34,7 +34,8 @@ public class DatabaseConnectionModel {
 		Connection connectDB = connectNow.getConnection();
 		ObservableList<HouseChoresPoint> list = FXCollections.observableArrayList();
 		try {
-			PreparedStatement preparedStatement = connectDB.prepareStatement("select * from housechores_table");
+			PreparedStatement preparedStatement = connectDB.prepareStatement(
+					"select * from housechores_table ORDER BY houseChoresID");
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next()){
