@@ -1,15 +1,23 @@
 package login;
 
-public class HouseChoresPoint {
+import java.sql.Date;
+
+public class HouseChoresPointTableCol {
 	int houseChoresID, point;
 	String houseChoresName;
 
-	public HouseChoresPoint(int houseChoresID, String houseChoresName, int point ) {
+
+	public HouseChoresPointTableCol(int houseChoresID,  String houseChoresName,int point) {
 		this.houseChoresID = houseChoresID;
 		this.point = point;
 		this.houseChoresName = houseChoresName;
 	}
+	// Do not delete getter and setter, this is how the mySQL connected to!!!
 
+	/**
+	 * return houseChoresID
+	 * @return houseChoresID
+	 */
 	public int getHouseChoresID() {
 		return houseChoresID;
 	}
@@ -17,7 +25,10 @@ public class HouseChoresPoint {
 	public void setHouseChoresID(int houseChoresID) {
 		this.houseChoresID = houseChoresID;
 	}
-
+	/**
+	 * return point
+	 * @return point
+	 */
 	public int getPoint() {
 		return point;
 	}
@@ -32,14 +43,5 @@ public class HouseChoresPoint {
 
 	public void setHouseChoresName(String houseChoresName) {
 		this.houseChoresName = houseChoresName;
-	}
-
-	@Override
-	public String toString() {
-		return "HouseChoresPoint{" +
-				"houseChoresID=" + houseChoresID +
-				", houseChoresName='" + houseChoresName +
-				", point=" + point +'\'' +
-				'}';
 	}
 }

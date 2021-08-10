@@ -20,8 +20,8 @@
       <AnchorPane layoutX="-3.0" prefHeight="636.0" prefWidth="362.0" style="-fx-background-color: #1974D2;">
          <children>
             <Button fx:id="addButton" layoutX="25.0" layoutY="430.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="43.0" prefWidth="320.0" stylesheets="@../CSS/NavyBlueHover.css" text="Add" />
-            <Button fx:id="updateButton" layoutX="25.0" layoutY="500.0" mnemonicParsing="false" onAction="#edit" prefHeight="43.0" prefWidth="320.0" stylesheets="@../CSS/NavyBlueHover.css" text="Update" />
-            <Button fx:id="deleteButton" layoutX="25.0" layoutY="570.0" mnemonicParsing="false" onAction="#delete" prefHeight="43.0" prefWidth="320.0" stylesheets="@../CSS/NavyBlueHover.css" text="Delete" />
+            <Button fx:id="updateButton" layoutX="25.0" layoutY="500.0" mnemonicParsing="false" onAction="#updateButtonOnAction" prefHeight="43.0" prefWidth="320.0" stylesheets="@../CSS/NavyBlueHover.css" text="Update" />
+            <Button fx:id="deleteButton" layoutX="25.0" layoutY="570.0" mnemonicParsing="false" onAction="#deleteButtonOnAction" prefHeight="43.0" prefWidth="320.0" stylesheets="@../CSS/NavyBlueHover.css" text="Delete" />
             <TextField fx:id="houseChoresIDTextField" layoutX="160.0" layoutY="124.0" prefHeight="25.0" prefWidth="190.0" promptText="integer only and be unique" />
             <Label layoutX="25.0" layoutY="125.0" prefHeight="20.0" prefWidth="127.0" text="House Chores ID" textFill="WHITE">
                <font>
@@ -33,7 +33,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="choresNameTextField" layoutX="160.0" layoutY="170.0" prefHeight="25.0" prefWidth="190.0" promptText="45 char limited" />
+            <TextField fx:id="choresNameTextField" layoutX="160.0" layoutY="170.0" prefHeight="25.0" prefWidth="190.0" promptText="45 char limited and be unique" />
             <Label layoutX="25.0" layoutY="215.0" prefHeight="20.0" prefWidth="127.0" text="Point" textFill="WHITE">
                <font>
                   <Font size="14.0" />

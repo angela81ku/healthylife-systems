@@ -105,7 +105,8 @@ public abstract class SystemAbstractController implements Initializable {
 		@Override
 		public void initialize(URL url, ResourceBundle resourceBundle){
 			displayImage();
-			// slider setting
+			// slider setting : reference from KEITHAYA https://www.youtube.com/watch?v=LMl_OZHJYC8
+			// remember to set the menuButton lower than the menuCloseButton, or you need to click twice to open
 			slider.setTranslateX(-SLIDER_WIDTH);
 			menuButton.setOnMouseClicked(event -> {
 				TranslateTransition slide = new TranslateTransition();

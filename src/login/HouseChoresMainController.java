@@ -35,6 +35,10 @@ public class HouseChoresMainController extends SystemAbstractController implemen
 		Screen screen = new Screen(url,super.mainOperationPane);
 		screen.switchPane();
 	}
-
+	public void loadRecordListScreen(ActionEvent event) throws IOException {
+		String url = "../FXML/houseChoresSubRecordScreen.fxml";
+		Screen screen = new Screen(url,super.mainOperationPane);
+		screen.switchPane();
+	}
 
 }
