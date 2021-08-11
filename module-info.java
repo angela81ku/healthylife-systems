@@ -9,5 +9,5 @@ module healthSystem {
 //	requires javafx.sql;
 	requires mysql.connector.java;
 
-	opens login;
+	opens controller;
 }
