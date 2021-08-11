@@ -85,8 +85,7 @@ public class HouseChoresSubPointListController implements Initializable {
 	 * add a new house chore, with unique and integer ID ,integer point and 45 max char house chore name.
 	 */
 	private void addHouseChores() {
-		DatabaseConnectionModel connectNow = new DatabaseConnectionModel();
-		Connection connectDB = connectNow.getConnection();
+
 		try {
 			int houseChoresIDColumnText = Integer.parseInt(houseChoresIDTextField.getText());
 			String choresNameText = choresNameTextField.getText();

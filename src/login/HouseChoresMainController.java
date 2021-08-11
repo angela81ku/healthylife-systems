@@ -23,11 +23,14 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class HouseChoresMainController extends SystemAbstractController implements Initializable {
+	@FXML
+	private ImageView welcomeImage;
 
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle){
 		super.initialize(url, resourceBundle);
 		super.systemSelectionMessageLabel.setText("House chores System");
+		ImageAdder image = new ImageAdder("images/cat2.jpg",welcomeImage);
 	}
 
 	public void loadPointListScreen(ActionEvent event) throws IOException {
@@ -37,6 +40,12 @@ public class HouseChoresMainController extends SystemAbstractController implemen
 	}
 	public void loadRecordListScreen(ActionEvent event) throws IOException {
 		String url = "../FXML/houseChoresSubRecordScreen.fxml";
+		Screen screen = new Screen(url,super.mainOperationPane);
+		screen.switchPane();
+	}
+
+	public void loadLeaderScreen(ActionEvent event) throws IOException {
+		String url = "../FXML/houseChoresSubLeaderScreen.fxml";
 		Screen screen = new Screen(url,super.mainOperationPane);
 		screen.switchPane();
 	}

@@ -7,10 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="systemOperationPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.MainMenuNavigateController">
+<BorderPane fx:id="systemOperationPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1010.0" style="-fx-background-color: #01010b;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.MainMenuNavigateController">
    <left>
       <AnchorPane fx:id="slider" prefHeight="475.0" prefWidth="235.0" style="-fx-background-color: #0F1626;" BorderPane.alignment="CENTER">
          <children>
@@ -75,8 +79,104 @@
    <right>
       <AnchorPane fx:id="mainOperationPane" prefHeight="635.0" prefWidth="1028.0" style="-fx-background-color: #000080;" BorderPane.alignment="CENTER">
          <children>
-            <Circle fill="DODGERBLUE" layoutX="259.0" layoutY="274.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label layoutX="207.0" layoutY="264.0" text="This is main menu!!!" />
+            <ImageView fx:id="welcomeImage" fitHeight="636.0" fitWidth="769.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../images/cat.jpg" />
+               </image>
+            </ImageView>
+            <Circle layoutX="174.0" layoutY="171.0" opacity="0.34" radius="8.0" stroke="BLACK" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <Circle layoutX="126.0" layoutY="129.0" opacity="0.38" radius="16.0" stroke="BLACK" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <Circle layoutX="151.0" layoutY="154.0" opacity="0.34" radius="9.0" stroke="BLACK" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <Circle layoutX="79.0" layoutY="65.0" opacity="0.38" radius="52.0" stroke="BLACK" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <Text fontSmoothingType="LCD" layoutX="39.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click Menu to start Meow" wrappingWidth="102.13670349121094">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color green="0.9166666865348816" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </right>

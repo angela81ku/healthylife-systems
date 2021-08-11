@@ -148,8 +148,9 @@ public abstract class SystemAbstractController implements Initializable {
 			ImageAdder image4 = new ImageAdder("images/add-list-64.png",pointListImage);
 			ImageAdder image5 = new ImageAdder("images/record.png",recordImage);
 			ImageAdder image6 = new ImageAdder("images/win-64.png",leaderImage);
-			ImageAdder image7 = new ImageAdder("images/calendar-2-128.png",calendarImage);
-			ImageAdder image8 = new ImageAdder("images/user-5-64.png",allocationImage);
+			//TODO future page future, now just hide
+//			ImageAdder image7 = new ImageAdder("images/calendar-2-128.png",calendarImage);
+//			ImageAdder image8 = new ImageAdder("images/user-5-64.png",allocationImage);
 			ImageAdder image9 = new ImageAdder("images/exit-64.png",exitImage);
 			ImageAdder image10 = new ImageAdder("images/hubCoral.png",hubImage);
 			ImageAdder image11 = new ImageAdder("images/activity-feed-64.png",menuImage);

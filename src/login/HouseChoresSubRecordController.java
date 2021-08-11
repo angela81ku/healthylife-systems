@@ -109,30 +109,13 @@ public class HouseChoresSubRecordController implements Initializable {
 		addHouseChores();
 	}
 	private void addHouseChores() {
-		DatabaseConnectionModel connectNow = new DatabaseConnectionModel();
-		Connection connectDB = connectNow.getConnection();
-		try {
-			String uerNameText = userNameComboBox.getValue();
-			String choresNameText = choresNameComboBox.getValue();
-			LocalDate dateText = datePicker.getValue();
+		String userNameText = userNameComboBox.getValue();
+		String choresNameText = choresNameComboBox.getValue();
+		LocalDate dateText = datePicker.getValue();
 
-			String sql = "INSERT INTO record_table(username, houseChoresName, date) VALUES(?,?,?)";
-			PreparedStatement statement = connectDB.prepareStatement(sql);
-			statement.setString(1, uerNameText);
-			statement.setString(2, choresNameText);
-			statement.setDate(3, Date.valueOf(dateText));
-
-			statement.executeUpdate();
-			houseChoresRegistryMessageLabel.setText("Record successfully!");
-		} catch (SQLIntegrityConstraintViolationException duplicate) {
-			houseChoresRegistryMessageLabel.setText("formation incorrect\n");
-		} catch (NumberFormatException numberFormatException) {
-			houseChoresRegistryMessageLabel.setText("formation incorrect\n");
-		}catch (NullPointerException e) {
-			houseChoresRegistryMessageLabel.setText("fPlease fill in all the field\n");
-		}catch (SQLException e) {
-			JOptionPane.showMessageDialog(null, e);
-		}
+		DatabaseHouseChoresModel.addHouseChoresRecordTable(userNameText,
+				DatabaseHouseChoresModel.houseChoresNameToID(choresNameText),
+				dateText,houseChoresRegistryMessageLabel);
 		updateHouseChoresTable();
 	}
 
@@ -154,23 +137,31 @@ public class HouseChoresSubRecordController implements Initializable {
 	 * sql syntax for update the housechores_table and update the vision of the table as well
 	 */
 	public void edit(ActionEvent event) {
-		try {
-			String sql = "UPDATE record_table SET houseChoresName = ?, username = ?, date = ? WHERE record_id = ?";
-			PreparedStatement statement = connectDB.prepareStatement(sql);
-			statement.setString(1, choresNameComboBox.getValue());
-			statement.setString(2, userNameComboBox.getValue());
-			statement.setDate(3, Date.valueOf(datePicker.getValue()));
-			statement.setInt(4, record_id);
-			statement.execute();
+//		 Integer houseChoresID, String userName, LocalDate date, int record_id
+		DatabaseHouseChoresModel.updateHouseChoresRecordTable(
+				DatabaseHouseChoresModel.houseChoresNameToID(choresNameComboBox.getValue()),
+				userNameComboBox.getValue(),
+				datePicker.getValue(),
+				record_id,
+				houseChoresRegistryMessageLabel
+		);
+//		try {
+//			String sql = "UPDATE record_table SET houseChoresName = ?, username = ?, date = ? WHERE record_id = ?";
+//			PreparedStatement statement = connectDB.prepareStatement(sql);
+//			statement.setString(1, choresNameComboBox.getValue());
+//			statement.setString(2, userNameComboBox.getValue());
+//			statement.setDate(3, Date.valueOf(datePicker.getValue()));
+//			statement.setInt(4, record_id);
+//			statement.execute();
 			updateHouseChoresTable();
-			houseChoresRegistryMessageLabel.setText("Update successfully");
-		}catch(DataTruncation dataTruncation){
-			houseChoresRegistryMessageLabel.setText("name too long");
-		}catch (NumberFormatException numberFormatException) {
-			houseChoresRegistryMessageLabel.setText("formation incorrect\n");
-		}catch (Exception e) {
-			JOptionPane.showMessageDialog(null, e);
-		}
+//			houseChoresRegistryMessageLabel.setText("Update successfully");
+//		}catch(DataTruncation dataTruncation){
+//			houseChoresRegistryMessageLabel.setText("name too long");
+//		}catch (NumberFormatException numberFormatException) {
+//			houseChoresRegistryMessageLabel.setText("formation incorrect\n");
+//		}catch (Exception e) {
+//			JOptionPane.showMessageDialog(null, e);
+//		}
 	}
 
 	public void delete(ActionEvent event) {
