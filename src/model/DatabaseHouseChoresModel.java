@@ -5,6 +5,7 @@ import controller.HouseChoresPointTableCol;
 import controller.HouseChoresRecordTableCol;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 
@@ -194,6 +195,38 @@ public class DatabaseHouseChoresModel {
 			e.getCause();
 		}
 		return list;
+	}
+
+	public static void deleteRecordIDRow(String targetTableName,  Integer deleteID, Label houseChoresRegistryMessageLabel) {
+
+		try {
+
+			String strQuery = "DELETE FROM $tableName WHERE record_id = ?;";
+			String query =strQuery.replace("$tableName",targetTableName);
+			PreparedStatement statement = connectDB.prepareStatement(query);
+
+			statement.setInt(1, deleteID);
+			statement.execute();
+			houseChoresRegistryMessageLabel.setText("Delete successfully");
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e);
+		}
+	}
+
+	public static void deleteHouseChoresIDRow(String targetTableName,  String deleteID, Label houseChoresRegistryMessageLabel) {
+
+		try {
+
+			String strQuery = "DELETE FROM $tableName WHERE houseChoresID= ?;";
+			String query =strQuery.replace("$tableName",targetTableName);
+			PreparedStatement statement = connectDB.prepareStatement(query);
+
+			statement.setString(1, deleteID);
+			statement.execute();
+			houseChoresRegistryMessageLabel.setText("Delete successfully");
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e);
+		}
 	}
 
 }

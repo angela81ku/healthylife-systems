@@ -140,7 +140,7 @@ public class HouseChoresSubRecordController implements Initializable {
 	 * sql syntax for update the housechores_table and update the vision of the table as well
 	 */
 	public void edit(ActionEvent event) {
-//		 Integer houseChoresID, String userName, LocalDate date, int record_id
+
 		DatabaseHouseChoresModel.updateHouseChoresRecordTable(
 				DatabaseHouseChoresModel.houseChoresNameToID(choresNameComboBox.getValue()),
 				userNameComboBox.getValue(),
@@ -148,36 +148,17 @@ public class HouseChoresSubRecordController implements Initializable {
 				record_id,
 				houseChoresRegistryMessageLabel
 		);
-//		try {
-//			String sql = "UPDATE record_table SET houseChoresName = ?, username = ?, date = ? WHERE record_id = ?";
-//			PreparedStatement statement = connectDB.prepareStatement(sql);
-//			statement.setString(1, choresNameComboBox.getValue());
-//			statement.setString(2, userNameComboBox.getValue());
-//			statement.setDate(3, Date.valueOf(datePicker.getValue()));
-//			statement.setInt(4, record_id);
-//			statement.execute();
 			updateHouseChoresTable();
-//			houseChoresRegistryMessageLabel.setText("Update successfully");
-//		}catch(DataTruncation dataTruncation){
-//			houseChoresRegistryMessageLabel.setText("name too long");
-//		}catch (NumberFormatException numberFormatException) {
-//			houseChoresRegistryMessageLabel.setText("formation incorrect\n");
-//		}catch (Exception e) {
-//			JOptionPane.showMessageDialog(null, e);
-//		}
-	}
 
+	}
+//	String targetTableName, String deleteIDCol, int deleteID, Label houseChoresRegistryMessageLabel
 	public void delete(ActionEvent event) {
-		String sql = "DELETE FROM record_table WHERE record_id = ?";
-		try {
-			PreparedStatement statement = connectDB.prepareStatement(sql);
-			statement.setInt(1, record_id);
-			statement.execute();
-			houseChoresRegistryMessageLabel.setText("Delete successfully");
+		DatabaseHouseChoresModel.deleteRecordIDRow("record_table",
+				record_id,
+				houseChoresRegistryMessageLabel);
+
 			updateHouseChoresTable();
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, e);
-		}
+
 	}
 
 }

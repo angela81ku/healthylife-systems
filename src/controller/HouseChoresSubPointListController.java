@@ -160,16 +160,11 @@ public class HouseChoresSubPointListController implements Initializable {
 	}
 
 	public void deleteButtonOnAction(ActionEvent event) {
-		String sql = "DELETE FROM housechores_table WHERE houseChoresID = ?";
-		try {
-			PreparedStatement statement = connectDB.prepareStatement(sql);
-			statement.setString(1, houseChoresIDTextField.getText());
-			statement.execute();
-			houseChoresRegistryMessageLabel.setText("Delete successfully");
-			updateHouseChoresTable();
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, e);
-		}
+		DatabaseHouseChoresModel.deleteHouseChoresIDRow("housechores_table",
+				houseChoresIDTextField.getText(),
+				houseChoresRegistryMessageLabel);
+		updateHouseChoresTable();
+
 	}
 
 }
