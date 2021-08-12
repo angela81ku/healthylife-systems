@@ -3,6 +3,7 @@ package model;
 import controller.HouseChoresLeaderTableCol;
 import controller.HouseChoresPointTableCol;
 import controller.HouseChoresRecordTableCol;
+import controller.LoginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -47,6 +48,35 @@ public class DatabaseHouseChoresModel {
 					"SELECT username, houseChoresName, date,record_id  FROM demo_db.record_table \n" +
 							"join housechores_table on record_table.houseChoresID = housechores_table.houseChoresID\n" +
 							"ORDER BY date");
+			ResultSet resultSet = preparedStatement.executeQuery();
+//String userName, String houseChoresName, Date date
+			while (resultSet.next()){
+				list.add(new HouseChoresRecordTableCol(
+						resultSet.getString("username"),
+						resultSet.getString("houseChoresName"),
+						resultSet.getDate("date"),
+						resultSet.getInt("record_id")
+				));
+			}
+		}catch(Exception e){
+		}
+
+		return list;
+	}
+
+	/**
+	 * get the full house chores record table
+	 * @return the full house chores record table using the list containing HouseChoresRecordTableCol object
+	 */
+	public static ObservableList<HouseChoresRecordTableCol> getSingleUserHouseChoresRecordTable(){
+		ObservableList<HouseChoresRecordTableCol> list = FXCollections.observableArrayList();
+		try {
+			PreparedStatement preparedStatement = connectDB.prepareStatement(
+					"SELECT username, houseChoresName, date,record_id  FROM demo_db.record_table \n" +
+							"join housechores_table on record_table.houseChoresID = housechores_table.houseChoresID\n" +
+							"WHERE username = ?" +
+							"ORDER BY date");
+			preparedStatement.setString(1, LoginController.getUserName());
 			ResultSet resultSet = preparedStatement.executeQuery();
 //String userName, String houseChoresName, Date date
 			while (resultSet.next()){

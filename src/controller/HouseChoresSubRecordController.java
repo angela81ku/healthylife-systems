@@ -80,21 +80,35 @@ public class HouseChoresSubRecordController implements Initializable {
 		colDate.setCellValueFactory(new PropertyValueFactory<HouseChoresRecordTableCol, Date>("date"));
 		colRecordID.setCellValueFactory(new PropertyValueFactory<HouseChoresRecordTableCol, Integer>("recordID"));
 		updateHouseChoresTable();
+		// set default to current date
+		LocalDate date = LocalDate.now();
+		datePicker.setValue(date);
+		// set default to login user
+		userNameComboBox.setValue(LoginController.getUserName());
 		// fill the combo box
 		fillUserNameComboBox();
 		fillChoresNameComboBox();
 	}
 
 	private void updateHouseChoresTable() {
-		listM = DatabaseHouseChoresModel.getHouseChoresRecordTable();
-		recordTable.setItems(listM);
+		if (DatabaseADMModel.checkAuthority()){
+			listM = DatabaseHouseChoresModel.getHouseChoresRecordTable();
+			recordTable.setItems(listM);
+		}else{
+			listM = DatabaseHouseChoresModel.getSingleUserHouseChoresRecordTable();
+			recordTable.setItems(listM);
+		}
 	}
 
 	/**
-	 * fill the userNameComboBox with all username
+	 * fill the userNameComboBox with all username if you are the adm,
+	 * fill the userNameComboBox with the login username if you are the the adm,
 	 */
 	public void fillUserNameComboBox(){
-		userNameComboBox.getItems().setAll(DatabaseADMModel.getUserName());
+		if (DatabaseADMModel.checkAuthority()) {
+			userNameComboBox.getItems().setAll(DatabaseADMModel.getUserName());
+		}else{
+			userNameComboBox.getItems().setAll(LoginController.getUserName());}
 	}
 
 	/**

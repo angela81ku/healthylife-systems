@@ -44,7 +44,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="74.0" layoutY="41.0" prefHeight="43.0" prefWidth="223.0" text="Right now it's admistration version" textFill="#ff533d">
+            <Label fx:id="messageLabel" layoutX="74.0" layoutY="41.0" prefHeight="43.0" prefWidth="223.0" textFill="#ff533d">
                <font>
                   <Font size="14.0" />
                </font>
