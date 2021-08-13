@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="systemOperationPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1010.0" style="-fx-background-color: #000080;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChoresAndExerciseMainController">
+   <left>
+      <AnchorPane fx:id="slider" prefHeight="635.0" prefWidth="237.0" style="-fx-background-color: #0f1626;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="houseChoresButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="162.0" mnemonicParsing="false" onAction="#loadHouseChoresMainScreen" prefHeight="32.0" prefWidth="190.0" stylesheets="@../view_css/NavyBlueClick.css" text="Chores and Exercise" textFill="WHITESMOKE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="entertainingBudgetButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="210.0" mnemonicParsing="false" onAction="#loadEntertainingMainScreen" prefHeight="32.0" prefWidth="190.0" stylesheets="@../view_css/NavyBlueClick.css" text="Entertaining budget track" textFill="WHITESMOKE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="healthTrackButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="257.0" mnemonicParsing="false" onAction="#loadTrashFoodMainScreen" prefHeight="32.0" prefWidth="190.0" stylesheets="@../view_css/NavyBlueClick.css" text="Trash food tracking " textFill="WHITESMOKE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="trashFoodTrackButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="306.0" mnemonicParsing="false" onAction="#loadTrashFoodMainScreen" prefHeight="32.0" prefWidth="183.0" stylesheets="@../view_css/NavyBlueClick.css" textFill="WHITESMOKE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelButton" alignment="BASELINE_LEFT" layoutX="44.0" layoutY="519.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="32.0" prefWidth="190.0" stylesheets="@../view_css/NavyBlueClick.css" text="Exit" textFill="WHITESMOKE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="houseImage" fitHeight="26.0" fitWidth="32.0" layoutX="10.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/house-2-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="entertainImage" fitHeight="26.0" fitWidth="32.0" layoutX="9.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/emoticon-48-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="sportImage" fitHeight="26.0" fitWidth="32.0" layoutX="9.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="friesImage" fitHeight="26.0" fitWidth="32.0" layoutX="9.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/french-fries-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="exitImage" fitHeight="26.0" fitWidth="32.0" layoutX="11.0" layoutY="520.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/exit-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="hubImage" fitHeight="77.0" fitWidth="99.0" layoutX="80.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/hubCoral.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="635.0" prefWidth="734.0" style="-fx-background-color: #f5f5f5;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane fx:id="mainOperationPane" layoutX="13.0" prefHeight="635.0" prefWidth="762.0">
+               <children>
+                  <ImageView fx:id="welcomeImage" fitHeight="636.0" fitWidth="777.0" layoutX="-13.0" layoutY="1.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../images/cat2.jpg" />
+                     </image>
+                  </ImageView>
+                  <Circle layoutX="173.0" layoutY="172.0" opacity="0.34" radius="8.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutX="125.0" layoutY="130.0" opacity="0.38" radius="16.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <Circle layoutX="150.0" layoutY="155.0" opacity="0.34" radius="9.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <Ellipse layoutX="85.0" layoutY="59.0" opacity="0.54" radiusX="65.0" radiusY="58.0" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.23765432834625244" green="0.23765432834625244" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                  </Ellipse>
+                  <Text fontSmoothingType="LCD" layoutX="34.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="set up event point here" wrappingWidth="102.13670349121094">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.9166666865348816" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <Ellipse layoutX="215.0" layoutY="59.0" opacity="0.54" radiusX="56.0" radiusY="58.0" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.23765432834625244" green="0.23765432834625244" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                  </Ellipse>
+                  <Text fontSmoothingType="LCD" layoutX="182.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="record what you did here" wrappingWidth="83.47001647949219">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.9166666865348816" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <Ellipse layoutX="347.0" layoutY="56.0" opacity="0.54" radiusX="50.0" radiusY="55.0" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.23765432834625244" green="0.23765432834625244" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                  </Ellipse>
+                  <Text fontSmoothingType="LCD" layoutX="320.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="see the winner  meow" wrappingWidth="83.47001647949219">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.9166666865348816" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+         </children></AnchorPane>
+   </right>
+   <top>
+      <AnchorPane prefHeight="65.0" prefWidth="1025.0" style="-fx-background-color: #AB987A;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="244.0" layoutY="24.0" prefHeight="41.0" prefWidth="755.0" style="-fx-background-color: #AB987A;">
+               <children>
+                  <Button layoutY="5.0" mnemonicParsing="false" onAction="#loadPointListScreen" prefHeight="32.0" prefWidth="120.0" stylesheets="@../view_css/LeatherHover.css" text="Point list">
+                     <graphic>
+                        <ImageView fx:id="pointListImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/add-list-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="130.0" layoutY="5.0" mnemonicParsing="false" onAction="#loadRecordListScreen" prefHeight="32.0" prefWidth="120.0" stylesheets="@../view_css/LeatherHover.css" text="Record">
+                     <graphic>
+                        <ImageView fx:id="recordImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/record.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="260.0" layoutY="5.0" mnemonicParsing="false" onAction="#loadLeaderScreen" prefHeight="32.0" prefWidth="120.0" stylesheets="@../view_css/LeatherHover.css" text="Leader" textFill="#ab987a">
+                     <graphic>
+                        <ImageView fx:id="leaderImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/win-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="390.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../view_css/LeatherHover.css">
+                     <graphic>
+                        <ImageView fx:id="calendarImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/user-5-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="650.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../view_css/LeatherHover.css">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button layoutX="520.0" layoutY="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" stylesheets="@../view_css/LeatherHover.css" textFill="#ab987a">
+                     <graphic>
+                        <ImageView fx:id="allocationImage" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" y="5.0">
+                           <image>
+                              <Image url="@../../images/calendar-2-128.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Label fx:id="menuCloseButton" alignment="BOTTOM_LEFT" layoutX="18.0" layoutY="33.0" prefHeight="27.0" prefWidth="200.0" text="Menu" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="798.0" AnchorPane.topAnchor="33.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  
+               </graphic>
+            </Label>
+            <Label fx:id="menuButton" layoutX="18.0" layoutY="33.0" onMouseClicked="#loadMainScreen" prefHeight="27.0" prefWidth="210.0" text="Menu" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="783.0" AnchorPane.topAnchor="33.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="menuImage" fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/activity-feed-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Pane layoutY="-5.0" prefHeight="29.0" prefWidth="1010.0" style="-fx-background-color: #f5f5f5;">
+               <children>
+                  <Label fx:id="systemSelectionMessageLabel" layoutX="17.0" layoutY="7.0" prefHeight="24.0" prefWidth="551.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+               </children>
+            </Pane>
+            <Button layoutX="14.0" layoutY="27.0" mnemonicParsing="false" onAction="#loadMainScreen" prefHeight="32.0" prefWidth="209.0" stylesheets="@../view_css/LeatherHover.css" text="Main Menu">
+               <graphic>
+                  <ImageView fx:id="menuCloseImage" fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/activity-feed-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

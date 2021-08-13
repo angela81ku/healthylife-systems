@@ -104,43 +104,44 @@ public abstract class SystemAbstractController implements Initializable {
 			displayImage();
 			// slider setting : reference from KEITHAYA https://www.youtube.com/watch?v=LMl_OZHJYC8
 			// remember to set the menuButton lower than the menuCloseButton, or you need to click twice to open
-			slider.setTranslateX(-SLIDER_WIDTH);
-			menuButton.setOnMouseClicked(event -> {
-				TranslateTransition slide = new TranslateTransition();
-				slide.setDuration(Duration.seconds(0.3));
-				slide.setNode(slider);
-
-				slide.setToX(0);
-				slide.play();
-				slider.setTranslateX(-SLIDER_WIDTH);
-
-				slide.setOnFinished((ActionEvent e) ->{
-					menuButton.setVisible(false);
-					menuCloseButton.setVisible(true);
-				});
-			});
-
-			menuCloseButton.setOnMouseClicked(event2 -> {
-				TranslateTransition slide1 = new TranslateTransition();
-				slide1.setDuration(Duration.seconds(0.4));
-				slide1.setNode(slider);
-
-				slide1.setToX(-SLIDER_WIDTH);
-				slide1.play();
-				slider.setTranslateX(0);
-
-				slide1.setOnFinished((ActionEvent e) ->{
-					menuButton.setVisible(true);
-					menuCloseButton.setVisible(false);
-				});
-			});
+//			slider.setTranslateX(-SLIDER_WIDTH);
+//			menuButton.setOnMouseClicked(event -> {
+//				TranslateTransition slide = new TranslateTransition();
+//				slide.setDuration(Duration.seconds(0.3));
+//				slide.setNode(slider);
+//
+//				slide.setToX(0);
+//				slide.play();
+//				slider.setTranslateX(-SLIDER_WIDTH);
+//
+//				slide.setOnFinished((ActionEvent e) ->{
+//					menuButton.setVisible(false);
+//					menuCloseButton.setVisible(true);
+//				});
+//			});
+//
+//			menuCloseButton.setOnMouseClicked(event2 -> {
+//				TranslateTransition slide1 = new TranslateTransition();
+//				slide1.setDuration(Duration.seconds(0.4));
+//				slide1.setNode(slider);
+//
+//				slide1.setToX(-SLIDER_WIDTH);
+//				slide1.play();
+//				slider.setTranslateX(0);
+//
+//				slide1.setOnFinished((ActionEvent e) ->{
+//					menuButton.setVisible(true);
+//					menuCloseButton.setVisible(false);
+//				});
+//			});
 
 		}
 
 		public void displayImage(){
 			ImageAdder image = new ImageAdder("images/house-2-64.png",houseImage);
 			ImageAdder image1 = new ImageAdder("images/emoticon-48-64.png",entertainImage);
-			ImageAdder image2 = new ImageAdder("images/soccer-4-64.png",sportImage);
+			// set as a place holder
+//			ImageAdder image2 = new ImageAdder("images/soccer-4-64.png",sportImage);
 			ImageAdder image3 = new ImageAdder("images/french-fries-64.png",friesImage);
 			ImageAdder image4 = new ImageAdder("images/add-list-64.png",pointListImage);
 			ImageAdder image5 = new ImageAdder("images/record.png",recordImage);
@@ -155,17 +156,21 @@ public abstract class SystemAbstractController implements Initializable {
 
 		}
 
-
+		public void loadMainScreen(ActionEvent event) throws IOException {
+			String url = "../view_fxml/mainMenuNavigate.fxml";
+			Screen screen = new Screen(url,systemOperationPane);
+			screen.switchPane();
+		}
 
 		public void loadHouseChoresMainScreen(ActionEvent event) throws IOException {
-			String url = "../view_fxml/houseChoresMainScreen.fxml";
+			String url = "../view_fxml/ChoresAndExerciseMainScreen.fxml";
 			Screen screen = new Screen(url,systemOperationPane);
 			screen.switchPane();
 		}
 
 		public void loadEntertainingMainScreen(ActionEvent event) throws IOException {
 			//TODO after semester
-			String url = "../view_fxml/entertainingMainScreen.fxml";
+			String url = "../view_fxml/EntertainingMainScreen.fxml";
 			Screen screen = new Screen(url,systemOperationPane);
 			screen.switchPane();
 		}
@@ -179,9 +184,9 @@ public abstract class SystemAbstractController implements Initializable {
 
 		public void loadTrashFoodMainScreen(ActionEvent event) throws IOException {
 			//TODO after semester
-//			String url = "../view_fxml/trashFoodMainScreen.fxml";
-//			Screen screen = new Screen(url,systemOperationPane);
-//			screen.switchPane();
+			String url = "../view_fxml/TrashFoodMainScreen.fxml";
+			Screen screen = new Screen(url,systemOperationPane);
+			screen.switchPane();
 		}
 
 		public void cancelButtonAction(ActionEvent event){

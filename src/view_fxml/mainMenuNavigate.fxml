@@ -16,29 +16,29 @@
 
 <BorderPane fx:id="systemOperationPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1010.0" style="-fx-background-color: #01010b;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainMenuNavigateController">
    <left>
-      <AnchorPane fx:id="slider" prefHeight="475.0" prefWidth="235.0" style="-fx-background-color: #0F1626;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="slider" prefHeight="475.0" prefWidth="235.0" style="-fx-background-color: #0F1626;" BorderPane.alignment="BOTTOM_CENTER">
          <children>
-            <Button fx:id="houseChoresButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="162.0" mnemonicParsing="false" onAction="#loadHouseChoresMainScreen" prefHeight="32.0" prefWidth="200.0" stylesheets="@../view_css/NavyBlueClick.css" text="House chores workload" textFill="WHITESMOKE">
+            <Button fx:id="houseChoresButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="162.0" mnemonicParsing="false" onAction="#loadHouseChoresMainScreen" prefHeight="32.0" prefWidth="190.0" stylesheets="@../view_css/NavyBlueClick.css" text="Chores and Exercise" textFill="WHITESMOKE">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="cancelButton" alignment="BASELINE_LEFT" layoutX="44.0" layoutY="519.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="32.0" prefWidth="200.0" stylesheets="@../view_css/NavyBlueClick.css" text="Exit" textFill="WHITESMOKE">
+            <Button fx:id="cancelButton" alignment="BASELINE_LEFT" layoutX="44.0" layoutY="519.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="32.0" prefWidth="190.0" stylesheets="@../view_css/NavyBlueClick.css" text="Exit" textFill="WHITESMOKE">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="healthTrackButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="257.0" mnemonicParsing="false" onAction="#loadHealthMainScreen" prefHeight="32.0" prefWidth="200.0" stylesheets="@../view_css/NavyBlueClick.css" text="Health tracking " textFill="WHITESMOKE">
+            <Button fx:id="healthTrackButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="257.0" mnemonicParsing="false" onAction="#loadTrashFoodMainScreen" prefHeight="32.0" prefWidth="190.0" stylesheets="@../view_css/NavyBlueClick.css" text="Trash food tracking " textFill="WHITESMOKE">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="trashFoodTrackButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="306.0" mnemonicParsing="false" onAction="#loadTrashFoodMainScreen" prefHeight="32.0" prefWidth="200.0" stylesheets="@../view_css/NavyBlueClick.css" text="Trash food tracking " textFill="WHITESMOKE">
+            <Button fx:id="trashFoodTrackButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="306.0" mnemonicParsing="false" onAction="#loadTrashFoodMainScreen" prefHeight="32.0" prefWidth="200.0" stylesheets="@../view_css/NavyBlueClick.css" textFill="WHITESMOKE">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="entertainingBudgetButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="210.0" mnemonicParsing="false" onAction="#loadEntertainingMainScreen" prefHeight="32.0" prefWidth="200.0" stylesheets="@../view_css/NavyBlueClick.css" text="Entertaining budget track" textFill="WHITESMOKE">
+            <Button fx:id="entertainingBudgetButton" alignment="BOTTOM_LEFT" layoutX="44.0" layoutY="210.0" mnemonicParsing="false" onAction="#loadEntertainingMainScreen" prefHeight="32.0" prefWidth="190.0" stylesheets="@../view_css/NavyBlueClick.css" text="Entertaining budget track" textFill="WHITESMOKE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -53,12 +53,8 @@
                   <Image url="@../../images/emoticon-48-64.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="sportImage" fitHeight="26.0" fitWidth="32.0" layoutX="9.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/soccer-4-64.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="friesImage" fitHeight="26.0" fitWidth="32.0" layoutX="8.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="sportImage" fitHeight="26.0" fitWidth="32.0" layoutX="9.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="friesImage" fitHeight="26.0" fitWidth="32.0" layoutX="9.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/french-fries-64.png" />
                </image>
@@ -77,7 +73,7 @@
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane fx:id="mainOperationPane" prefHeight="635.0" prefWidth="1028.0" style="-fx-background-color: #000080;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="mainOperationPane" prefHeight="636.0" prefWidth="723.0" style="-fx-background-color: #000080;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="welcomeImage" fitHeight="636.0" fitWidth="769.0" pickOnBounds="true">
                <image>
@@ -102,7 +98,7 @@
                   </LinearGradient>
                </fill>
             </Circle>
-            <Circle layoutX="126.0" layoutY="129.0" opacity="0.38" radius="16.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle layoutX="132.0" layoutY="207.0" opacity="0.38" radius="16.0" stroke="BLACK" strokeType="INSIDE">
                <fill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>
@@ -120,7 +116,7 @@
                   </LinearGradient>
                </fill>
             </Circle>
-            <Circle layoutX="151.0" layoutY="154.0" opacity="0.34" radius="9.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle layoutX="157.0" layoutY="190.0" opacity="0.34" radius="9.0" stroke="BLACK" strokeType="INSIDE">
                <fill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>
@@ -138,7 +134,7 @@
                   </LinearGradient>
                </fill>
             </Circle>
-            <Circle layoutX="79.0" layoutY="65.0" opacity="0.38" radius="52.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle layoutX="66.0" layoutY="242.0" opacity="0.38" radius="52.0" stroke="BLACK" strokeType="INSIDE">
                <fill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>
@@ -156,7 +152,7 @@
                   </LinearGradient>
                </fill>
             </Circle>
-            <Text fontSmoothingType="LCD" layoutX="39.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click Menu to start Meow" wrappingWidth="102.13670349121094">
+            <Text fontSmoothingType="LCD" layoutX="29.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose a system" wrappingWidth="102.13670349121094">
                <fill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>
@@ -241,15 +237,8 @@
                <font>
                   <Font size="18.0" />
                </font>
-               <graphic>
-                  <ImageView fx:id="menuCloseImage" fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/activity-feed-64.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
             </Label>
-            <Label fx:id="menuButton" layoutX="18.0" layoutY="33.0" prefHeight="27.0" prefWidth="200.0" text="Menu" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="854.0" AnchorPane.topAnchor="33.0">
+            <Label fx:id="menuButton" layoutX="18.0" layoutY="33.0" prefHeight="27.0" prefWidth="218.0" text="Menu" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="775.0" AnchorPane.topAnchor="33.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -263,9 +252,21 @@
             </Label>
             <Pane layoutY="-5.0" prefHeight="29.0" prefWidth="1010.0" style="-fx-background-color: #f5f5f5;">
                <children>
-                  <Label fx:id="systemSelectionMessageLabel" layoutX="4.0" layoutY="7.0" prefHeight="24.0" prefWidth="551.0" />
+                  <Label fx:id="systemSelectionMessageLabel" layoutX="18.0" layoutY="7.0" prefHeight="24.0" prefWidth="551.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
                </children>
             </Pane>
+            <Button layoutX="13.0" layoutY="26.0" mnemonicParsing="false" onAction="#loadMainScreen" prefHeight="32.0" prefWidth="209.0" stylesheets="@../view_css/LeatherHover.css" text="Main Menu">
+               <graphic>
+                  <ImageView fx:id="menuCloseImage" fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/activity-feed-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
    </top>

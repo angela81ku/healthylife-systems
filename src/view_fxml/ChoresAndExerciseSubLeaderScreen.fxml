@@ -12,17 +12,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="635.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HouseChoresSubLeaderController">
+<AnchorPane prefHeight="636.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChoresAndExerciseSubLeaderController">
    <children>
       <TableView fx:id="userDetailTable" layoutX="359.0" layoutY="277.0" prefHeight="359.0" prefWidth="418.0" style="-fx-background-color: #f5f5f5;">
         <columns>
           <TableColumn fx:id="colUsername" prefWidth="103.33331298828125" text="Username" />
             <TableColumn fx:id="colDate" prefWidth="81.33334350585938" text="Date" />
-          <TableColumn fx:id="colChoreName" prefWidth="163.33331298828125" text="House Chores Name" />
+          <TableColumn fx:id="colChoreName" prefWidth="163.33331298828125" text="Event Name" />
             <TableColumn fx:id="colPoint" minWidth="0.0" prefWidth="66.66668701171875" text="Point" />
         </columns>
       </TableView>
-      <AnchorPane layoutX="-3.0" prefHeight="636.0" prefWidth="362.0" style="-fx-background-color: #1974D2;">
+      <AnchorPane layoutX="-14.0" prefHeight="636.0" prefWidth="373.0" style="-fx-background-color: #1974D2;">
          <children>
             <Button fx:id="winnerCalculateButton" layoutX="21.0" layoutY="189.0" mnemonicParsing="false" onAction="#winnerCalculateButtonOnAction" prefHeight="43.0" prefWidth="320.0" stylesheets="@../view_css/NavyBlueHover.css" text="Winner Calculate!" />
             <Label layoutX="19.0" layoutY="335.0" prefHeight="20.0" prefWidth="127.0" text="username" textFill="WHITE">

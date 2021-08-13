@@ -1,12 +1,8 @@
 package model;
 
-import controller.HouseChoresLeaderTableCol;
-import controller.HouseChoresPointTableCol;
-import controller.HouseChoresRecordTableCol;
 import controller.LoginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 
@@ -14,19 +10,19 @@ import javax.swing.*;
 import java.sql.*;
 import java.time.LocalDate;
 
-public class DatabaseHouseChoresModel {
+public class DatabaseChoresAndExerciseModel {
 	private static DatabaseConnectionModel connectNow = new DatabaseConnectionModel();
 	private static Connection connectDB = connectNow.getConnection();
 
-	public static ObservableList<HouseChoresPointTableCol> getHouseChoresPointTable(){
-		ObservableList<HouseChoresPointTableCol> list = FXCollections.observableArrayList();
+	public static ObservableList<ChoresAndExercisePointTableCol> getHouseChoresPointTable(){
+		ObservableList<ChoresAndExercisePointTableCol> list = FXCollections.observableArrayList();
 		try {
 			PreparedStatement preparedStatement = connectDB.prepareStatement(
 					"select * from housechores_table ORDER BY houseChoresID");
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next()){
-				list.add(new HouseChoresPointTableCol(
+				list.add(new ChoresAndExercisePointTableCol(
 						resultSet.getInt("houseChoresID"),
 						resultSet.getString("houseChoresName"),
 						resultSet.getInt("point")
@@ -39,10 +35,10 @@ public class DatabaseHouseChoresModel {
 
 	/**
 	 * get the full house chores record table
-	 * @return the full house chores record table using the list containing HouseChoresRecordTableCol object
+	 * @return the full house chores record table using the list containing ChoresAndExerciseRecordTableCol object
 	 */
-	public static ObservableList<HouseChoresRecordTableCol> getHouseChoresRecordTable(){
-		ObservableList<HouseChoresRecordTableCol> list = FXCollections.observableArrayList();
+	public static ObservableList<ChoresAndExerciseRecordTableCol> getHouseChoresRecordTable(){
+		ObservableList<ChoresAndExerciseRecordTableCol> list = FXCollections.observableArrayList();
 		try {
 			PreparedStatement preparedStatement = connectDB.prepareStatement(
 					"SELECT username, houseChoresName, date,record_id  FROM demo_db.record_table \n" +
@@ -51,7 +47,7 @@ public class DatabaseHouseChoresModel {
 			ResultSet resultSet = preparedStatement.executeQuery();
 //String userName, String houseChoresName, Date date
 			while (resultSet.next()){
-				list.add(new HouseChoresRecordTableCol(
+				list.add(new ChoresAndExerciseRecordTableCol(
 						resultSet.getString("username"),
 						resultSet.getString("houseChoresName"),
 						resultSet.getDate("date"),
@@ -66,10 +62,10 @@ public class DatabaseHouseChoresModel {
 
 	/**
 	 * get the full house chores record table
-	 * @return the full house chores record table using the list containing HouseChoresRecordTableCol object
+	 * @return the full house chores record table using the list containing ChoresAndExerciseRecordTableCol object
 	 */
-	public static ObservableList<HouseChoresRecordTableCol> getSingleUserHouseChoresRecordTable(){
-		ObservableList<HouseChoresRecordTableCol> list = FXCollections.observableArrayList();
+	public static ObservableList<ChoresAndExerciseRecordTableCol> getSingleUserHouseChoresRecordTable(){
+		ObservableList<ChoresAndExerciseRecordTableCol> list = FXCollections.observableArrayList();
 		try {
 			PreparedStatement preparedStatement = connectDB.prepareStatement(
 					"SELECT username, houseChoresName, date,record_id  FROM demo_db.record_table \n" +
@@ -80,7 +76,7 @@ public class DatabaseHouseChoresModel {
 			ResultSet resultSet = preparedStatement.executeQuery();
 //String userName, String houseChoresName, Date date
 			while (resultSet.next()){
-				list.add(new HouseChoresRecordTableCol(
+				list.add(new ChoresAndExerciseRecordTableCol(
 						resultSet.getString("username"),
 						resultSet.getString("houseChoresName"),
 						resultSet.getDate("date"),
@@ -132,7 +128,7 @@ public class DatabaseHouseChoresModel {
 		}
 	}
 
-	public static void updateHouseChoresRecordTable(Integer houseChoresID, String userName, LocalDate date, int record_id, Label houseChoresRegistryMessageLabel){
+	public static void updateEventRecordTable(Integer houseChoresID, String userName, LocalDate date, int record_id, Label houseChoresRegistryMessageLabel){
 		try {
 			String sql = "UPDATE record_table SET houseChoresID = ?, username = ?, date = ? WHERE record_id = ?";
 			PreparedStatement statement = connectDB.prepareStatement(sql);
@@ -173,8 +169,8 @@ public class DatabaseHouseChoresModel {
 		return list;
 	}
 
-	public static ObservableList<HouseChoresLeaderTableCol> getWinnerTableList(Date startDate, Date endDate, String userName){
-		ObservableList<HouseChoresLeaderTableCol> list = FXCollections.observableArrayList();
+	public static ObservableList<ChoresAndExerciseLeaderTableCol> getWinnerTableList(Date startDate, Date endDate, String userName){
+		ObservableList<ChoresAndExerciseLeaderTableCol> list = FXCollections.observableArrayList();
 		try {
 			PreparedStatement preparedStatement = connectDB.prepareStatement(
 					"SELECT record_table.username, record_table.date, houseChoresName, \n" +
@@ -190,7 +186,7 @@ public class DatabaseHouseChoresModel {
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next()){
-				list.add(new HouseChoresLeaderTableCol(resultSet.getString("username"),
+				list.add(new ChoresAndExerciseLeaderTableCol(resultSet.getString("username"),
 						resultSet.getDate("date"),
 						resultSet.getString("houseChoresName"),
 						resultSet.getInt("point")));
@@ -243,7 +239,7 @@ public class DatabaseHouseChoresModel {
 		}
 	}
 
-	public static void deleteHouseChoresIDRow(String targetTableName,  String deleteID, Label houseChoresRegistryMessageLabel) {
+	public static void deleteEventIDRow(String targetTableName,  String deleteID, Label houseChoresRegistryMessageLabel) {
 
 		try {
 

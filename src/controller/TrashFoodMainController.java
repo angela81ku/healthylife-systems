@@ -3,30 +3,26 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.ImageView;
-import model.DatabaseADMModel;
 import model.ImageAdder;
-import model.Screen;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 /**
  * EntertainmentMainController is the controller to control the entertainment main menu
  * extends SystemAbstractController implements Initializable.
  */
-public class EntertainingMainController extends SystemAbstractController implements Initializable {
+public class TrashFoodMainController extends SystemAbstractController implements Initializable {
 	@FXML
 	private ImageView welcomeImage;
 
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle){
 		super.initialize(url, resourceBundle);
-		super.systemSelectionMessageLabel.setText("Entertaining budget track System");
-		ImageAdder image = new ImageAdder("images/cat3.jpg",welcomeImage);
+		super.systemSelectionMessageLabel.setText("Trash food track System");
+		ImageAdder image = new ImageAdder("images/cat4.jpg",welcomeImage);
 	}
 
 

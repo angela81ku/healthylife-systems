@@ -8,27 +8,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="635.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HouseChoresSubPointListController">
+<AnchorPane prefHeight="635.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChoresAndExerciseSubPointListController">
    <children>
       <TableView fx:id="pointTable" layoutX="358.0" layoutY="1.0" onMouseClicked="#getSelected" prefHeight="635.0" prefWidth="418.0" style="-fx-background-color: #f5f5f5;">
         <columns>
-          <TableColumn fx:id="colID" prefWidth="113.99993896484375" text="HouseChores ID" />
-          <TableColumn fx:id="colChoreName" prefWidth="209.33334350585938" text="House Chores Name" />
+          <TableColumn fx:id="colID" prefWidth="113.99993896484375" text="Event ID" />
+          <TableColumn fx:id="colChoreName" prefWidth="209.33334350585938" text="Event Name" />
             <TableColumn fx:id="colPoint" prefWidth="94.0" text="Point" />
         </columns>
       </TableView>
-      <AnchorPane layoutX="-3.0" prefHeight="636.0" prefWidth="362.0" style="-fx-background-color: #1974D2;">
+      <AnchorPane layoutX="-14.0" prefHeight="636.0" prefWidth="373.0" style="-fx-background-color: #1974D2;">
          <children>
             <Button fx:id="addButton" layoutX="25.0" layoutY="430.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="43.0" prefWidth="320.0" stylesheets="@../view_css/NavyBlueHover.css" text="Add" />
             <Button fx:id="updateButton" layoutX="25.0" layoutY="500.0" mnemonicParsing="false" onAction="#updateButtonOnAction" prefHeight="43.0" prefWidth="320.0" stylesheets="@../view_css/NavyBlueHover.css" text="Update" />
             <Button fx:id="deleteButton" layoutX="25.0" layoutY="570.0" mnemonicParsing="false" onAction="#deleteButtonOnAction" prefHeight="43.0" prefWidth="320.0" stylesheets="@../view_css/NavyBlueHover.css" text="Delete" />
             <TextField fx:id="houseChoresIDTextField" layoutX="160.0" layoutY="124.0" prefHeight="25.0" prefWidth="190.0" promptText="integer only and be unique" />
-            <Label layoutX="25.0" layoutY="125.0" prefHeight="20.0" prefWidth="127.0" text="House Chores ID" textFill="WHITE">
+            <Label layoutX="25.0" layoutY="125.0" prefHeight="20.0" prefWidth="127.0" text="Event ID" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="25.0" layoutY="170.0" prefHeight="20.0" prefWidth="127.0" text="House Chores Name" textFill="WHITE">
+            <Label layoutX="25.0" layoutY="170.0" prefHeight="20.0" prefWidth="127.0" text="Event Name" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>

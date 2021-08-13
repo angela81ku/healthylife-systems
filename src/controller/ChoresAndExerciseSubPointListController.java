@@ -8,31 +8,35 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
+import model.ChoresAndExercisePointTableCol;
+import model.DatabaseChoresAndExerciseModel;
 import model.DatabaseConnectionModel;
-import model.DatabaseHouseChoresModel;
 
 import javax.swing.*;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class HouseChoresSubPointListController implements Initializable {
+/**
+ * point list page in chores and exercise system controller
+ */
+public class ChoresAndExerciseSubPointListController implements Initializable {
 
 	private DatabaseConnectionModel connectNow = new DatabaseConnectionModel();
 
 	private Connection connectDB = connectNow.getConnection();
 
 	@FXML
-	private TableView<HouseChoresPointTableCol> pointTable;
+	private TableView<ChoresAndExercisePointTableCol> pointTable;
 
 	@FXML
-	private TableColumn<HouseChoresPointTableCol, Integer> colID;
+	private TableColumn<ChoresAndExercisePointTableCol, Integer> colID;
 
 	@FXML
-	private TableColumn<HouseChoresPointTableCol, String> colChoreName;
+	private TableColumn<ChoresAndExercisePointTableCol, String> colChoreName;
 
 	@FXML
-	private TableColumn<HouseChoresPointTableCol, Integer> colPoint;
+	private TableColumn<ChoresAndExercisePointTableCol, Integer> colPoint;
 
 	@FXML
 	private Button addButton;
@@ -55,29 +59,31 @@ public class HouseChoresSubPointListController implements Initializable {
 	@FXML
 	private Label houseChoresRegistryMessageLabel;
 
-	ObservableList<HouseChoresPointTableCol> listM;
+	ObservableList<ChoresAndExercisePointTableCol> listM;
 
 	private int index = -1;
-//	Connection connection = null;
-//	ResultSet resultSet = null;
-//	PreparedStatement preparedStatement = null;
 
 
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
-		//the PropertyValueFactory tales the variable name of the HouseChoresPointTableCol.
-		colID.setCellValueFactory(new PropertyValueFactory<HouseChoresPointTableCol, Integer>("houseChoresID"));
-		colChoreName.setCellValueFactory(new PropertyValueFactory<HouseChoresPointTableCol, String>("houseChoresName"));
-		colPoint.setCellValueFactory(new PropertyValueFactory<HouseChoresPointTableCol, Integer>("point"));
+		//the PropertyValueFactory tales the variable name of the ChoresAndExercisePointTableCol.
+		colID.setCellValueFactory(new PropertyValueFactory<ChoresAndExercisePointTableCol, Integer>("houseChoresID"));
+		colChoreName.setCellValueFactory(new PropertyValueFactory<ChoresAndExercisePointTableCol, String>("houseChoresName"));
+		colPoint.setCellValueFactory(new PropertyValueFactory<ChoresAndExercisePointTableCol, Integer>("point"));
 
-		updateHouseChoresTable();
+		updateEventTable();
 	}
 
-	private void updateHouseChoresTable() {
-		listM = DatabaseHouseChoresModel.getHouseChoresPointTable();
+	/**
+	 * update the event table from database
+	 */
+	private void updateEventTable() {
+		listM = DatabaseChoresAndExerciseModel.getHouseChoresPointTable();
 		pointTable.setItems(listM);
 	}
-
+	/**
+	 * add button mouse click event
+	 */
 	public void addButtonOnAction(ActionEvent event) {
 		addHouseChores();
 	}
@@ -116,7 +122,7 @@ public class HouseChoresSubPointListController implements Initializable {
 			e.getCause();
 			JOptionPane.showMessageDialog(null, e);
 		}
-		updateHouseChoresTable();
+		updateEventTable();
 	}
 
 	/**
@@ -144,7 +150,7 @@ public class HouseChoresSubPointListController implements Initializable {
 			statement.setString(2, pointTextField.getText());
 			statement.setString(3, houseChoresIDTextField.getText());
 			statement.execute();
-			updateHouseChoresTable();
+			updateEventTable();
 			//TODO index out of range will still success, need handle
 			houseChoresRegistryMessageLabel.setText("Update successfully");
 		}catch (SQLIntegrityConstraintViolationException duplicate) {
@@ -160,10 +166,10 @@ public class HouseChoresSubPointListController implements Initializable {
 	}
 
 	public void deleteButtonOnAction(ActionEvent event) {
-		DatabaseHouseChoresModel.deleteHouseChoresIDRow("housechores_table",
+		DatabaseChoresAndExerciseModel.deleteEventIDRow("housechores_table",
 				houseChoresIDTextField.getText(),
 				houseChoresRegistryMessageLabel);
-		updateHouseChoresTable();
+		updateEventTable();
 
 	}
 

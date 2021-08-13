@@ -7,41 +7,46 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import model.ChoresAndExerciseRecordTableCol;
 import model.DatabaseADMModel;
+import model.DatabaseChoresAndExerciseModel;
 import model.DatabaseConnectionModel;
-import model.DatabaseHouseChoresModel;
 
-import javax.swing.*;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class HouseChoresSubRecordController implements Initializable {
+/**
+ * ChoresAndExerciseSubRecordController can control the scene of the record page embedded in the ChoresAndExerciseMainScreen
+ */
+public class ChoresAndExerciseSubRecordController implements Initializable {
 
 	private DatabaseConnectionModel connectNow = new DatabaseConnectionModel();
 
 	private Connection connectDB = connectNow.getConnection();
 
-	private ObservableList<HouseChoresRecordTableCol> listM;
+	private ObservableList<ChoresAndExerciseRecordTableCol> listM;
 
 	private int record_id;
 
 	@FXML
-	private TableView<HouseChoresRecordTableCol> recordTable;
+	private TableView<ChoresAndExerciseRecordTableCol> recordTable;
 
 	@FXML
-	private TableColumn<HouseChoresRecordTableCol, String> colUserName;
+	private TableColumn<ChoresAndExerciseRecordTableCol, String> colUserName;
 
 	@FXML
-	private TableColumn<HouseChoresRecordTableCol, String> colChoreName;
+	private TableColumn<ChoresAndExerciseRecordTableCol, String> colChoreName;
 
 	@FXML
-	private TableColumn<HouseChoresRecordTableCol, Date> colDate;
-
+	private TableColumn<ChoresAndExerciseRecordTableCol, Date> colDate;
 
 	@FXML
-	private TableColumn<HouseChoresRecordTableCol, Integer> colRecordID;
+	private Label messageLabel;
+
+	@FXML
+	private TableColumn<ChoresAndExerciseRecordTableCol, Integer> colRecordID;
 
 	@FXML
 	private Button addButton;
@@ -64,22 +69,19 @@ public class HouseChoresSubRecordController implements Initializable {
 	@FXML
 	private DatePicker datePicker;
 
-	//this is to set up the index when clicking the selecting row in the table
+
 	private int index = -1;
-//	Connection connection = null;
-//	ResultSet resultSet = null;
-//	PreparedStatement preparedStatement = null;
 
 
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
-		//the PropertyValueFactory tales the variable name of the HouseChoresRecordTableCol.
+		//the PropertyValueFactory takes the variable name from the ChoresAndExerciseRecordTableCol.
 //		String userName, String houseChoresName, Date date
-		colUserName.setCellValueFactory(new PropertyValueFactory<HouseChoresRecordTableCol, String>("userName"));
-		colChoreName.setCellValueFactory(new PropertyValueFactory<HouseChoresRecordTableCol, String>("houseChoresName"));
-		colDate.setCellValueFactory(new PropertyValueFactory<HouseChoresRecordTableCol, Date>("date"));
-		colRecordID.setCellValueFactory(new PropertyValueFactory<HouseChoresRecordTableCol, Integer>("recordID"));
-		updateHouseChoresTable();
+		colUserName.setCellValueFactory(new PropertyValueFactory<ChoresAndExerciseRecordTableCol, String>("userName"));
+		colChoreName.setCellValueFactory(new PropertyValueFactory<ChoresAndExerciseRecordTableCol, String>("choresAndExerciseName"));
+		colDate.setCellValueFactory(new PropertyValueFactory<ChoresAndExerciseRecordTableCol, Date>("date"));
+		colRecordID.setCellValueFactory(new PropertyValueFactory<ChoresAndExerciseRecordTableCol, Integer>("recordID"));
+		updateEventRecordTable();
 		// set default to current date
 		LocalDate date = LocalDate.now();
 		datePicker.setValue(date);
@@ -88,14 +90,31 @@ public class HouseChoresSubRecordController implements Initializable {
 		// fill the combo box
 		fillUserNameComboBox();
 		fillChoresNameComboBox();
+		setMessageLabel();
 	}
 
-	private void updateHouseChoresTable() {
+	/**
+	 * set the message label based on the login user's authorization, if it's admistrator, it will show it's
+	 * adm mode, if it's a member then just show the instruction.
+	 */
+	private void setMessageLabel(){
+		if(DatabaseADMModel.checkAuthority()){
+			messageLabel.setText("You are in the administration mode");
+		}else{
+			messageLabel.setText("You can record your event!");
+		}
+	}
+
+	/**
+	 * update the event record table, administrator can record all members' event, while other can only
+	 * record their own event.
+	 */
+	private void updateEventRecordTable() {
 		if (DatabaseADMModel.checkAuthority()){
-			listM = DatabaseHouseChoresModel.getHouseChoresRecordTable();
+			listM = DatabaseChoresAndExerciseModel.getHouseChoresRecordTable();
 			recordTable.setItems(listM);
 		}else{
-			listM = DatabaseHouseChoresModel.getSingleUserHouseChoresRecordTable();
+			listM = DatabaseChoresAndExerciseModel.getSingleUserHouseChoresRecordTable();
 			recordTable.setItems(listM);
 		}
 	}
@@ -115,7 +134,7 @@ public class HouseChoresSubRecordController implements Initializable {
 	 * fill the choresNameComboBox with all houseChoresName
 	 */
 	public void fillChoresNameComboBox(){
-		choresNameComboBox.getItems().setAll(DatabaseHouseChoresModel.getHouseChoresName());
+		choresNameComboBox.getItems().setAll(DatabaseChoresAndExerciseModel.getHouseChoresName());
 	}
 
 	/**
@@ -130,10 +149,10 @@ public class HouseChoresSubRecordController implements Initializable {
 		String choresNameText = choresNameComboBox.getValue();
 		LocalDate dateText = datePicker.getValue();
 
-		DatabaseHouseChoresModel.addHouseChoresRecordTable(userNameText,
-				DatabaseHouseChoresModel.houseChoresNameToID(choresNameText),
+		DatabaseChoresAndExerciseModel.addHouseChoresRecordTable(userNameText,
+				DatabaseChoresAndExerciseModel.houseChoresNameToID(choresNameText),
 				dateText,houseChoresRegistryMessageLabel);
-		updateHouseChoresTable();
+		updateEventRecordTable();
 	}
 
 	/**
@@ -155,23 +174,23 @@ public class HouseChoresSubRecordController implements Initializable {
 	 */
 	public void edit(ActionEvent event) {
 
-		DatabaseHouseChoresModel.updateHouseChoresRecordTable(
-				DatabaseHouseChoresModel.houseChoresNameToID(choresNameComboBox.getValue()),
+		DatabaseChoresAndExerciseModel.updateEventRecordTable(
+				DatabaseChoresAndExerciseModel.houseChoresNameToID(choresNameComboBox.getValue()),
 				userNameComboBox.getValue(),
 				datePicker.getValue(),
 				record_id,
 				houseChoresRegistryMessageLabel
 		);
-			updateHouseChoresTable();
+			updateEventRecordTable();
 
 	}
-//	String targetTableName, String deleteIDCol, int deleteID, Label houseChoresRegistryMessageLabel
+
 	public void delete(ActionEvent event) {
-		DatabaseHouseChoresModel.deleteRecordIDRow("record_table",
+		DatabaseChoresAndExerciseModel.deleteRecordIDRow("record_table",
 				record_id,
 				houseChoresRegistryMessageLabel);
 
-			updateHouseChoresTable();
+			updateEventRecordTable();
 
 	}
 

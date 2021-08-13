@@ -7,7 +7,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.DatabaseADMModel;
+import model.DatabaseChoresAndExerciseModel;
+import model.UserTableCol;
 
+import javax.xml.crypto.Data;
 import java.io.File;
 
 public class Main extends Application {
@@ -27,17 +30,15 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         //test
-        DatabaseADMModel.getUserName();
-
-
-
-
+        System.out.println(DatabaseADMModel.getUserName());
+        System.out.println(DatabaseChoresAndExerciseModel.getHouseChoresName());
+        System.out.println(DatabaseChoresAndExerciseModel.getHouseChoresPointTable());
+        System.out.println(DatabaseChoresAndExerciseModel.getHouseChoresRecordTable());
+        System.out.println(DatabaseChoresAndExerciseModel.getSingleUserHouseChoresRecordTable());
+        System.out.println(DatabaseChoresAndExerciseModel.houseChoresNameToID("mopping - 5m"));
         //////////////////////////////////////////////////
 
-
         launch(args);
-
-
 
 
     }

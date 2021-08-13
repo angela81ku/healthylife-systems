@@ -1,6 +1,5 @@
 package model;
 
-import controller.HouseChoresMainController;
 import controller.LoginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

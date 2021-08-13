@@ -20,9 +20,5 @@ public class MainMenuNavigateController extends SystemAbstractController impleme
 		super.systemSelectionMessageLabel.setText("Main Menu");
 		ImageAdder image = new ImageAdder("images/cat.jpg",welcomeImage);
 	}
-//	@Override
-//	public void displayImage(){
-//		super.displayImage();
-//
-//	}
+
 }

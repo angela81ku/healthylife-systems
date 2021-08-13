@@ -13,8 +13,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
-
-public class HouseChoresMainController extends SystemAbstractController implements Initializable {
+/**
+ * ChoresAndExerciseMainController is the controller to control the ChoresAndExerciseMainController main menu
+ * extends SystemAbstractController implements Initializable.
+ */
+public class ChoresAndExerciseMainController extends SystemAbstractController implements Initializable {
 	private String CODE = "ABX87";
 	private String codeInput = "";
 	@FXML
@@ -23,9 +26,15 @@ public class HouseChoresMainController extends SystemAbstractController implemen
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle){
 		super.initialize(url, resourceBundle);
-		super.systemSelectionMessageLabel.setText("House chores System");
+		super.systemSelectionMessageLabel.setText("Chores and exercise system");
 		ImageAdder image = new ImageAdder("images/cat2.jpg",welcomeImage);
 	}
+
+
+	/**
+	 * access control, it would pop up a textInputDialog to ask for password
+	 * if the password is correct, point list can be accessed
+	 */
 	private void admCodeVerify() {
 
 		TextInputDialog dialog = new TextInputDialog();
@@ -35,11 +44,10 @@ public class HouseChoresMainController extends SystemAbstractController implemen
 		dialog.setContentText("Password:");
 
 		Optional<String> result = dialog.showAndWait();
-		System.out.println(result);
 		if (result.isPresent()){
 			codeInput = dialog.getEditor().getText();
 			if (codeInput.equals(CODE)){
-				String url = "../view_fxml/houseChoresSubPointListScreen.fxml";
+				String url = "../view_fxml/ChoresAndExerciseSubPointListScreen.fxml";
 				Screen screen = new Screen(url,super.mainOperationPane);
 				screen.switchPane();
 			}else{
@@ -47,25 +55,40 @@ public class HouseChoresMainController extends SystemAbstractController implemen
 			}
 		}
 	}
-	public void loadPointListScreen(ActionEvent event) throws IOException {
+
+	/**
+	 * load point list screen if the user is one of the administrator, else ask for password.
+	 * @param event mouse click event linked to point list button
+	 * @throws IOException
+	 */
+	public void loadPointListScreen(ActionEvent event) {
 		if (DatabaseADMModel.checkAuthority() || CODE.equals(codeInput)){
-			String url = "../view_fxml/houseChoresSubPointListScreen.fxml";
+			String url = "../view_fxml/ChoresAndExerciseSubPointListScreen.fxml";
 			Screen screen = new Screen(url,super.mainOperationPane);
 			screen.switchPane();
 		}else{
 			admCodeVerify();
 		}
-
-
 	}
+
+	/**
+	 * load record list screen
+	 * @param event mouse click event
+	 * @throws IOException
+	 */
 	public void loadRecordListScreen(ActionEvent event) throws IOException {
-		String url = "../view_fxml/houseChoresSubRecordScreen.fxml";
+		String url = "../view_fxml/ChoresAndExerciseSubRecordScreen.fxml";
 		Screen screen = new Screen(url,super.mainOperationPane);
 		screen.switchPane();
 	}
 
+	/**
+	 * load leader board screen
+	 * @param event mouse click event
+	 * @throws IOException
+	 */
 	public void loadLeaderScreen(ActionEvent event) throws IOException {
-		String url = "../view_fxml/houseChoresSubLeaderScreen.fxml";
+		String url = "../view_fxml/ChoresAndExerciseSubLeaderScreen.fxml";
 		Screen screen = new Screen(url,super.mainOperationPane);
 		screen.switchPane();
 	}

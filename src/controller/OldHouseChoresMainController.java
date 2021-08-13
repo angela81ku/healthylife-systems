@@ -153,7 +153,7 @@
 //
 //
 //	public void loadHouseChoresMainScreen(ActionEvent event) throws IOException {
-//		String url = "../FXML/houseChoresMainScreen.fxml";
+//		String url = "../FXML/ChoresAndExerciseMainScreen.fxml";
 //		Screen screen = new Screen(url,systemOperationPane);
 //		screen.switchPane();
 //	}
@@ -177,7 +177,7 @@
 //	}
 //
 //	public void loadPointListScreen(ActionEvent event) throws IOException {
-//		String url = "../FXML/houseChoresSubPointListScreen.fxml";
+//		String url = "../FXML/ChoresAndExerciseSubPointListScreen.fxml";
 //		Screen screen = new Screen(url,mainOperationPane);
 //		screen.switchPane();
 //	}

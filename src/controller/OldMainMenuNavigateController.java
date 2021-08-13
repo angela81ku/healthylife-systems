@@ -156,7 +156,7 @@
 //
 //
 //	public void loadHouseChoresMainScreen(ActionEvent event) throws IOException {
-//		String url = "../FXML/houseChoresMainScreen.fxml";
+//		String url = "../FXML/ChoresAndExerciseMainScreen.fxml";
 //		Screen screen = new Screen(url,systemOperationPane);
 //		screen.switchPane();
 //	}

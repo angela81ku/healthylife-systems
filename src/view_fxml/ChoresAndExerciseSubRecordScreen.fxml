@@ -9,17 +9,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="635.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HouseChoresSubRecordController">
+<AnchorPane prefHeight="635.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChoresAndExerciseSubRecordController">
    <children>
       <TableView fx:id="recordTable" layoutX="358.0" layoutY="1.0" onMouseClicked="#getSelected" prefHeight="635.0" prefWidth="418.0" style="-fx-background-color: #f5f5f5;">
         <columns>
           <TableColumn fx:id="colUserName" prefWidth="121.3333740234375" text="User Name" />
-          <TableColumn fx:id="colChoreName" prefWidth="146.66659545898438" text="House Chores Name" />
-            <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="149.33331298828125" text="Date" />
+          <TableColumn fx:id="colChoreName" prefWidth="192.66665649414062" text="Event Name" />
+            <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="103.33331298828125" text="Date" />
             <TableColumn fx:id="colRecordID" prefWidth="94.6666259765625" text="record_id" />
         </columns>
       </TableView>
-      <AnchorPane layoutX="-3.0" prefHeight="636.0" prefWidth="362.0" style="-fx-background-color: #1974D2;">
+      <AnchorPane layoutX="-14.0" prefHeight="636.0" prefWidth="373.0" style="-fx-background-color: #1974D2;">
          <children>
             <Button fx:id="addButton" layoutX="25.0" layoutY="430.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="43.0" prefWidth="320.0" stylesheets="@../view_css/NavyBlueHover.css" text="Add" />
             <Button fx:id="updateButton" layoutX="25.0" layoutY="500.0" mnemonicParsing="false" onAction="#edit" prefHeight="43.0" prefWidth="320.0" stylesheets="@../view_css/NavyBlueHover.css" text="Update" />
@@ -29,7 +29,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="25.0" layoutY="170.0" prefHeight="20.0" prefWidth="127.0" text="House Chores Name" textFill="WHITE">
+            <Label layoutX="25.0" layoutY="170.0" prefHeight="20.0" prefWidth="127.0" text="Event Name" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -44,7 +44,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="messageLabel" layoutX="74.0" layoutY="41.0" prefHeight="43.0" prefWidth="223.0" textFill="#ff533d">
+            <Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="74.0" layoutY="39.0" prefHeight="43.0" prefWidth="223.0" textAlignment="JUSTIFY" textFill="WHITESMOKE">
                <font>
                   <Font size="14.0" />
                </font>

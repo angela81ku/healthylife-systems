@@ -21,6 +21,9 @@ import java.util.ResourceBundle;
 
 import java.net.URL;
 
+/**
+ * log in page controller
+ */
 public class LoginController implements Initializable {
 //TODO keyboard listener for enter
 
@@ -52,19 +55,28 @@ public class LoginController implements Initializable {
 	}
 
 
-
+	/**
+	 * registry button mouse click event, will go to the registry page
+	 * @param event
+	 */
 	public void RegistryButtonAction(ActionEvent event){
 		createAccountForm();
 	}
 
-
+	/**
+	 * cancel button mouse click event, will end the application
+	 * @param event
+	 */
 	public void CancelButtonAction(ActionEvent event){
 		Stage stage = (Stage) cancelButton.getScene().getWindow();
 		stage.close();
 
 	}
-
-	public void loginButtonOnAction(ActionEvent actionEvent){
+	/**
+	 * login button mouse click event, will log in to the main page
+	 * @param event
+	 */
+	public void loginButtonOnAction(ActionEvent event){
 
 		if (usernameTextField.getText().isBlank() == false && enterPasswordField.getText().isBlank() == false){
 			validateLogin();
@@ -75,6 +87,9 @@ public class LoginController implements Initializable {
 		}
 	}
 
+	/**
+	 * validate the login, if it match username and password in the database, log in success.
+	 */
 	public void validateLogin(){
 		DatabaseConnectionModel connection = new DatabaseConnectionModel();
 		Connection connectDB = connection.getConnection();
