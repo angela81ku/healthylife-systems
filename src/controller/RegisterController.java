@@ -65,6 +65,7 @@ public class RegisterController implements Initializable{
 
 		}else{
 			confirmPasswordLabel.setText("Password doesn't match");
+			registrationMessageLabel.setText("");
 		}
 
 	}
@@ -88,9 +89,11 @@ public class RegisterController implements Initializable{
 			usernameDuplicateLabel.setText("");
 
 		}catch(SQLIntegrityConstraintViolationException duplicate){
+			registrationMessageLabel.setText("");
 			usernameDuplicateLabel.setText("Username already exists, please pick another one.");
 
 		}catch(Exception e){
+			registrationMessageLabel.setText("");
 			e.printStackTrace();
 			e.getCause();
 		}

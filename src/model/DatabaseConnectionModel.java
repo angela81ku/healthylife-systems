@@ -2,9 +2,11 @@ package model;
 
 import java.sql.*;
 
+/**
+ * This class is to connect the database
+ */
 public class DatabaseConnectionModel {
-	public Connection databaseLink;
-
+	private Connection databaseLink;
 
 	public Connection getConnection(){
 		String databaseName = "demo_db";

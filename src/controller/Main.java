@@ -13,6 +13,9 @@ import model.UserTableCol;
 import javax.xml.crypto.Data;
 import java.io.File;
 
+/**
+ * Served as start the game and driver test
+ */
 public class Main extends Application {
 
     @Override
@@ -27,7 +30,6 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-
     public static void main(String[] args) {
         //test
         System.out.println(DatabaseADMModel.getUserName());
@@ -37,9 +39,7 @@ public class Main extends Application {
         System.out.println(DatabaseChoresAndExerciseModel.getSingleUserHouseChoresRecordTable());
         System.out.println(DatabaseChoresAndExerciseModel.houseChoresNameToID("mopping - 5m"));
         //////////////////////////////////////////////////
-
         launch(args);
-
 
     }
 }

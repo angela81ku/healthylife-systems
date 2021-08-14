@@ -21,7 +21,7 @@ public class DatabaseADMModel {
 			PreparedStatement preparedStatement = connectDB.prepareStatement(
 					"select username from user_account  ");
 			ResultSet resultSet = preparedStatement.executeQuery();
-//String userName, String houseChoresName, Date date
+
 			while (resultSet.next()){
 				list.add(
 						resultSet.getString("username"));
@@ -43,7 +43,7 @@ public class DatabaseADMModel {
 					"select username from user_account where authority = ?;");
 			preparedStatement.setString(1,"adm");
 			ResultSet resultSet = preparedStatement.executeQuery();
-//String userName, String houseChoresName, Date date
+
 			while (resultSet.next()){
 				list.add(
 						resultSet.getString("username"));

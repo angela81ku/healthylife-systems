@@ -43,7 +43,7 @@ public class DatabaseChoresAndExerciseModel {
 			PreparedStatement preparedStatement = connectDB.prepareStatement(
 					"SELECT username, houseChoresName, date,record_id  FROM demo_db.record_table \n" +
 							"join housechores_table on record_table.houseChoresID = housechores_table.houseChoresID\n" +
-							"ORDER BY date");
+							"ORDER BY date DESC");
 			ResultSet resultSet = preparedStatement.executeQuery();
 //String userName, String houseChoresName, Date date
 			while (resultSet.next()){
@@ -71,7 +71,7 @@ public class DatabaseChoresAndExerciseModel {
 					"SELECT username, houseChoresName, date,record_id  FROM demo_db.record_table \n" +
 							"join housechores_table on record_table.houseChoresID = housechores_table.houseChoresID\n" +
 							"WHERE username = ?" +
-							"ORDER BY date");
+							"ORDER BY date DESC");
 			preparedStatement.setString(1, LoginController.getUserName());
 			ResultSet resultSet = preparedStatement.executeQuery();
 //String userName, String houseChoresName, Date date

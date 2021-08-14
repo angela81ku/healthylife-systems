@@ -26,9 +26,9 @@
          </children>
       </AnchorPane>
       <Label layoutX="95.0" layoutY="80.0" text="First Name" />
-      <TextField fx:id="firstnameTextField" layoutX="95.0" layoutY="95.0" prefHeight="25.0" prefWidth="331.0" promptText="First Name" />
+      <TextField fx:id="firstnameTextField" layoutX="95.0" layoutY="95.0" prefHeight="25.0" prefWidth="331.0" promptText="First Name (Optional)" />
       <Label layoutX="95.0" layoutY="125.0" text="Last Name" />
-      <TextField fx:id="lastnameTextField" layoutX="95.0" layoutY="140.0" prefHeight="25.0" prefWidth="331.0" promptText="Last Name" />
+      <TextField fx:id="lastnameTextField" layoutX="95.0" layoutY="140.0" prefHeight="25.0" prefWidth="331.0" promptText="Last Name (Optional)" />
       <Label layoutX="95.0" layoutY="170.0" text="User Name" />
       <TextField fx:id="usernameTextField" layoutX="95.0" layoutY="185.0" prefHeight="25.0" prefWidth="331.0" promptText="User Name" />
       <Label layoutX="95.0" layoutY="215.0" text="Password" />
